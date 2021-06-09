@@ -35,3 +35,6 @@ Youtubeのエクササイズ動画を見ると、どんぐりがもらえる。�
 
 ## 画面遷移図
 https://xd.adobe.com/view/7ed924be-b411-4805-be34-aaff71eaebbf-2b8a/
+
+## ER図
+https://drive.google.com/file/d/1SE9JzA2XCDWHIg9mhqMyQ-dbrqDC021X/view?usp=sharing
