@@ -34,4 +34,7 @@ Youtubeのエクササイズ動画を見ると、どんぐりがもらえる。�
 10~30代のエクササイズを習慣にしたい人
 
 ## 画面遷移図
-https://xd.adobe.com/view/7ed924be-b411-4805-be34-aaff71eaebbf-2b8a/
+https://xd.adobe.com/view/b025fbf5-b334-466b-8dd3-9216b1e805b0-e576/
+
+## ER図
+https://drive.google.com/file/d/1SE9JzA2XCDWHIg9mhqMyQ-dbrqDC021X/view?usp=sharing
