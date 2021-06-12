@@ -17,18 +17,11 @@ AllCops:
     - 'lib/**'
     - 'db/**/*'
     - 'config/**/*'
-    - 'script/**/*'
-    - !ruby/regexp /old_and_unused\.rb$/
+    - 'spec/**/*'
 
 #railsモードにする。railsプロジェクトなら基本trueにしておく。
 Rails:
   Enabled: true
-
-#Exclude => 対象外のファイルを指定
-Rails/FilePath:
-  Exclude:
-    - 'lib/tasks/dev.rake'
-    - 'spec/rails_helper.rb'
 
 # 日本語でのコメントを許可
 AsciiComments:
