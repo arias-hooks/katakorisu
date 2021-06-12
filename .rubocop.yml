@@ -1,0 +1,51 @@
+# 将来的には対応する規約の読込
+inherit_from: .rubocop_todo.yml
+
+# 追加した規約ファイル読込
+require:
+  - rubocop-rails
+  - rubocop-rspec
+
+AllCops:
+  # Rubyバージョン指定
+  TargetRubyVersion: 2.7.2
+  TargetRailsVersion: 6.1.2
+  # 除外
+  Exclude:
+    - 'config.ru'
+    - 'bin/**'
+    - 'lib/**'
+    - 'db/**/*'
+    - 'config/**/*'
+    - 'script/**/*'
+    - !ruby/regexp /old_and_unused\.rb$/
+
+#railsモードにする。railsプロジェクトなら基本trueにしておく。
+Rails:
+  Enabled: true
+
+#Exclude => 対象外のファイルを指定
+Rails/FilePath:
+  Exclude:
+    - 'lib/tasks/dev.rake'
+    - 'spec/rails_helper.rb'
+
+# 日本語でのコメントを許可
+AsciiComments:
+  Enabled: false
+
+# クラスのコメント必須を無視
+Documentation:
+  Enabled: false
+
+# モジュール名::クラス名の定義を許可
+ClassAndModuleChildren:
+  Enabled: false
+
+# メソッド名のprefixに「set_」「get_」を許可
+AccessorMethodName:
+  Enabled: false
+
+# 文字リテラルのイミュータブル宣言を無視（freezeになるのはRuby3以降）
+Style/FrozenStringLiteralComment:
+  Enabled: false
