@@ -10,7 +10,15 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_06_12_092633) do
+ActiveRecord::Schema.define(version: 2021_06_12_095625) do
+
+  create_table "acorns", charset: "utf8mb4", force: :cascade do |t|
+    t.integer "acorn_number", default: 1, null: false
+    t.bigint "user_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["user_id"], name: "index_acorns_on_user_id", unique: true
+  end
 
   create_table "squirrels", charset: "utf8mb4", force: :cascade do |t|
     t.integer "squirrel_number", default: 6, null: false
@@ -28,5 +36,6 @@ ActiveRecord::Schema.define(version: 2021_06_12_092633) do
     t.index ["line_user_id"], name: "index_users_on_line_user_id", unique: true
   end
 
+  add_foreign_key "acorns", "users"
   add_foreign_key "squirrels", "users"
 end
