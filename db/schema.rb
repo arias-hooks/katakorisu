@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_06_12_111958) do
+ActiveRecord::Schema.define(version: 2021_06_12_120251) do
 
   create_table "acorns", charset: "utf8mb4", force: :cascade do |t|
     t.integer "acorn_number", default: 1, null: false
@@ -60,6 +60,14 @@ ActiveRecord::Schema.define(version: 2021_06_12_111958) do
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["line_user_id"], name: "index_users_on_line_user_id", unique: true
+  end
+
+  create_table "videos", charset: "utf8mb4", force: :cascade do |t|
+    t.string "youtube_id", null: false
+    t.integer "category", default: 0, null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["youtube_id"], name: "index_videos_on_youtube_id", unique: true
   end
 
   add_foreign_key "acorns", "users"
