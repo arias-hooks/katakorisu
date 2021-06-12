@@ -4,6 +4,7 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 ruby '2.7.2'
 
 gem 'dotenv-rails'
+gem 'enum_help'
 gem 'html2slim'
 gem 'line-bot-api'
 gem 'rails-i18n'

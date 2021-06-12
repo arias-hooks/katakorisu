@@ -1,4 +1,44 @@
 ja:
   activerecord:
     models:
+      user: ユーザー
+      squirrel: 肩こリス
+      acorn: どんぐり
+      setting: 設定
+      activity: アクティビティ
+      video: ワークアウト動画
+      user_video: 登録した動画
     attributes:
+      user:
+        line_user_id: LINEユーザーID
+      squirrel:
+        squirrel_number: 肩こリスの数
+        total_squirrel_number: 友だちになった肩こリスの数
+      acorn:
+        acorn_number: どんぐりの数
+      activity:
+        video_views: 動画の視聴数
+        video_viewing_time: ワークアウト時間
+      setting:
+        notification: 通知設定
+      user_video:
+        youtube_id: Youtubeの動画ID
+      video:
+        youtube_id: Youtubeの動画ID
+        category: カテゴリー
+  attributes:
+    id: ID
+    created_at: 作成日時
+    updated_at: 更新日時
+  enums:
+    setting:
+      notification:
+        'off': 通知オフ
+        one: 肩こリスが1匹増えるごとに通知
+        max: 肩こリスが最大の6匹になったら通知
+    video:
+      category:
+        stretch: ストレッチ
+        yoga: ヨガ
+        weight_training: 筋トレ
+        dance: ダンス
