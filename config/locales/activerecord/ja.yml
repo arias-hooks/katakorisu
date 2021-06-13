@@ -35,7 +35,7 @@ ja:
       notification:
         'off': 通知オフ
         one: 肩こリスが1匹増えるごとに通知
-        max: 肩こリスが最大の6匹になったら通知
+        six: 肩こリスが最大の6匹になったら通知
     video:
       category:
         stretch: ストレッチ
