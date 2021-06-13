@@ -10,10 +10,10 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_06_12_120251) do
+ActiveRecord::Schema.define(version: 2021_06_13_124617) do
 
   create_table "acorns", charset: "utf8mb4", force: :cascade do |t|
-    t.integer "acorn_number", default: 1, null: false
+    t.integer "number", default: 1, null: false
     t.bigint "user_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
@@ -38,8 +38,8 @@ ActiveRecord::Schema.define(version: 2021_06_12_120251) do
   end
 
   create_table "squirrels", charset: "utf8mb4", force: :cascade do |t|
-    t.integer "squirrel_number", default: 6, null: false
-    t.integer "total_squirrel_number", default: 0, null: false
+    t.integer "number", default: 6, null: false
+    t.integer "total_number", default: 0, null: false
     t.bigint "user_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
