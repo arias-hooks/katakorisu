@@ -20,11 +20,9 @@ document.addEventListener('DOMContentLoaded', () => {
         method: 'POST',
         body: body
       });
-      debugger
       fetch(request)
-        // .then(() => {
-        //   const redirect_url = '/squirrel'
-        //   window.location = redirect_url
-        // })
+        .then(() => {
+          window.location = '/squirrel'
+        })
     })
 })

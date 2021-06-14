@@ -14,10 +14,8 @@ class UsersController < ApplicationController
       Activity.create!(user: user)
       Setting.create!(user: user)
       session[:user_id] = user.id
-      redirect_to squirrel_path
     elsif user
       session[:user_id] = user.id
-      redirect_to squirrel_path
     end
   end
 end
