@@ -1,5 +1,5 @@
 class Video < ApplicationRecord
-  validates :youtube_id, presence: true, uniqueness: true, format: { with: /^[a-zA-Z0-9_-]{11}$/ }
+  validates :youtube_id, presence: true, uniqueness: true, format: { with: /\A[a-zA-Z0-9_-]{11}\z/ }
 
   enum category: {
     stretch: 0,          # ストレッチ

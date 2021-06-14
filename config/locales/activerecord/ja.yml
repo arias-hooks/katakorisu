@@ -12,10 +12,10 @@ ja:
       user:
         line_user_id: LINEユーザーID
       squirrel:
-        squirrel_number: 肩こリスの数
-        total_squirrel_number: 友だちになった肩こリスの数
+        number: 肩こリスの数
+        total_number: 友だちになった肩こリスの数
       acorn:
-        acorn_number: どんぐりの数
+        number: どんぐりの数
       activity:
         video_views: 動画の視聴数
         video_viewing_time: ワークアウト時間
@@ -35,7 +35,7 @@ ja:
       notification:
         'off': 通知オフ
         one: 肩こリスが1匹増えるごとに通知
-        max: 肩こリスが最大の6匹になったら通知
+        six: 肩こリスが最大の6匹になったら通知
     video:
       category:
         stretch: ストレッチ
