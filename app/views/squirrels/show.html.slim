@@ -1,1 +1,10 @@
-p Find me in app/views/squirrels/show.html.slim
+h1 ホーム
+p= "#{current_user.squirrel.number}匹"
+p= "#{current_user.acorn.number}個"
+
+- if current_user.decorate.acorn_exist?
+  = image_tag 'acron/exist.png'
+- else
+  = image_tag 'acron/no_exist.png'
+
+= image_tag 'squirrel/six.png'
