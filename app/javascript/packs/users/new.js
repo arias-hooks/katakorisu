@@ -10,7 +10,6 @@ document.addEventListener('DOMContentLoaded', () => {
     })
     .then(() => {
       const idToken = liff.getIDToken()
-      debugger
       const body = `idToken=${idToken}`
       const request = new Request('/users', {
         headers: {
