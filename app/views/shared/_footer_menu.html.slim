@@ -1,5 +1,13 @@
-nav
-  ul
-    li.current= link_to 'ホーム', '#'
-    li= link_to 'ワークアウト', '#'
-    li= link_to 'アクティビティ', '#'
+ul.fixed-bottom.w-100.shadow-lg.list-unstyled.list-group.list-group-horizontal.text-center
+  button.mx-auto.list-group-item.list-group-item-action
+    = link_to '#'
+      i.fas.fa-home.fa-2x
+      .icon-name ホーム
+  button.mx-auto.list-group-item.list-group-item-action
+    = link_to '#'
+      i.fab.fa-youtube.fa-2x
+      .icon-name ワークアウト
+  button.mx-auto.list-group-item.list-group-item-action
+    = link_to '#'
+      i.fas.fa-user-circle.fa-2x
+      .icon-name プロフィール
