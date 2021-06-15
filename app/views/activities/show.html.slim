@@ -1,0 +1,11 @@
+content_for :css
+  = stylesheet_link_tag 'activities'
+= javascript_pack_tag 'activities/show'
+
+h1 プロフィール
+p#name
+= image_tag 'users/default.png', id: 'picture', size: '64'
+
+p= "友だちになった肩こリス：#{current_user.activity.video_views}匹"
+p= "動画の視聴数：#{current_user.activity.video_views}本"
+p= "ワークアウト時間：#{current_user.activity.video_viewing_time}分"
