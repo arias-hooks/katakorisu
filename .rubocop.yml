@@ -18,6 +18,8 @@ AllCops:
     - 'db/**/*'
     - 'config/**/*'
     - 'spec/**/*'
+    - 'tmp/**/*'
+    - 'node_modules/**/*'
 
 #railsモードにする。railsプロジェクトなら基本trueにしておく。
 Rails:
