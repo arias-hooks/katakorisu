@@ -4,6 +4,7 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 ruby '2.7.2'
 
 gem 'dotenv-rails'
+gem 'draper'
 gem 'enum_help'
 gem 'html2slim'
 gem 'line-bot-api'
@@ -57,7 +58,6 @@ group :development do
 
   gem 'better_errors'
   gem 'binding_of_caller'
-
   gem 'pry-rails'
 end
 
