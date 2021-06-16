@@ -1,14 +1,12 @@
 doctype html
 html
   head
-    title
-      | 肩こリス
+    title= page_title(yield(:title))
     meta[name="viewport" content="width=device-width,initial-scale=1"]
     script[charset="utf-8" src="https://static.line-scdn.net/liff/edge/2/sdk.js"]
     = csrf_meta_tags
     = csp_meta_tag
     = stylesheet_link_tag 'application', media: 'all'
-    = yield :css
     = javascript_pack_tag 'application'
     = stylesheet_pack_tag 'application'
   body
