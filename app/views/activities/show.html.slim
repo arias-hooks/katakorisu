@@ -1,11 +1,24 @@
-content_for :css
-  = stylesheet_link_tag 'activities'
+- content_for(:title, t('.title'))
+= stylesheet_link_tag 'activities'
 = javascript_pack_tag 'activities/show'
 
-h1 プロフィール
+h1 アクティビティ
 p#name
 = image_tag 'users/default.png', id: 'picture', size: '64'
 
 p= "友だちになった肩こリス：#{current_user.activity.video_views}匹"
 p= "動画の視聴数：#{current_user.activity.video_views}本"
 p= "ワークアウト時間：#{current_user.activity.video_viewing_time}分"
+
+= form_with model: @setting do |f|
+  = f.label :notification
+  = f.select :notification, Setting.notifications_i18n.keys.map {|k| [Setting.notifications_i18n[k], k]}
+
+
+= link_to "https://twitter.com/share?url=#{request.base_url}&text=エクササイズサポートサービス肩こリスです！", class: 'btn btn-default', target: '_blank' do
+  i.fab.fa-twitter style='color: #3399FF;'
+  |  Twitterでシェア
+
+= link_to "https://social-plugins.line.me/lineit/share?url=#{request.base_url}", class: 'btn btn-default' do
+  i.fab.fa-line style='color: #00B900;'
+  |  友達にLINEでシェア
