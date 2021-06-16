@@ -1,3 +1,5 @@
 class ActivitiesController < ApplicationController
-  def show; end
+  def show
+    @setting = current_user.setting
+  end
 end

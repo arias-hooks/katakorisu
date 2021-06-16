@@ -1,13 +1,16 @@
-ul.fixed-bottom.w-100.shadow-lg.list-unstyled.list-group.list-group-horizontal.text-center
-  button.mx-auto.list-group-item.list-group-item-action
-    = link_to squirrel_path
+= stylesheet_link_tag 'footer_menu'
+= javascript_pack_tag 'footer_menu'
+
+nav.fixed-bottom.w-100.shadow-lg.list-unstyled.list-group.list-group-horizontal.text-center
+  = link_to squirrel_path, class: 'mx-auto list-group-item list-group-item-action'
+    #home
       i.fas.fa-home.fa-2x
-      .icon-name ホーム
-  button.mx-auto.list-group-item.list-group-item-action
-    = link_to '#'
+      .menu-icon-name ホーム
+  = link_to squirrel_path, class: 'mx-auto list-group-item list-group-item-action'
+    #workout
       i.fab.fa-youtube.fa-2x
-      .icon-name ワークアウト
-  button.mx-auto.list-group-item.list-group-item-action
-    = link_to activity_path
+      .menu-icon-name ワークアウト
+  = link_to activity_path, class: 'mx-auto list-group-item list-group-item-action'
+    #activity
       i.fas.fa-user-circle.fa-2x
-      .icon-name プロフィール
+      .menu-icon-name アクティビティ
