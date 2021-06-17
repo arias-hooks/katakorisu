@@ -1,5 +1,7 @@
 class UsersController < ApplicationController
-  def new; end
+  def new
+    gon.liff_id = ENV['LIFF_ID']
+  end
 
   def create
     id_token = params[:idToken]
