@@ -1,9 +1,12 @@
 ja:
   defaults:
-    register: "登録する"
+    register: 登録する
   squirrels:
     show:
-      title: "ホーム"
+      title: ホーム
   activities:
     show:
-      title: "アクティビティ"
+      title: アクティビティ
+  videos:
+    index:
+      title: ワークアウト

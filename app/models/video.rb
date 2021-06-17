@@ -7,4 +7,6 @@ class Video < ApplicationRecord
     weight_training: 2,  # 筋トレ
     dance: 3             # ダンス
   }
+
+  scope :recent, -> { order(created_at: :desc) }
 end

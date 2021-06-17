@@ -25,6 +25,10 @@ document.addEventListener('DOMContentLoaded', () => {
     homeSelect();
   }
 
+  if (location.pathname.includes('/videos')) {
+    workoutSelect();
+  }
+
   if (location.pathname.includes('/activity')) {
     activitySelect();
   }
