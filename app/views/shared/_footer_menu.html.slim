@@ -1,16 +1,10 @@
-= stylesheet_link_tag 'footer_menu'
-= javascript_pack_tag 'footer_menu'
-
-nav.fixed-bottom.w-100.shadow-lg.list-unstyled.list-group.list-group-horizontal.text-center
-  = link_to squirrel_path, class: 'mx-auto list-group-item list-group-item-action'
-    #home
-      i.fas.fa-home.fa-2x
-      .menu-icon-name ホーム
-  = link_to videos_path, class: 'mx-auto list-group-item list-group-item-action'
-    #workout
-      i.fab.fa-youtube.fa-2x
-      .menu-icon-name ワークアウト
-  = link_to activity_path, class: 'mx-auto list-group-item list-group-item-action'
-    #activity
-      i.fas.fa-user-circle.fa-2x
-      .menu-icon-name アクティビティ
+nav.fixed.bottom-0.inset-x-0.flex.justify-between.text-sm.font-bold.border-t-2.border-solid.border-gray-200.bg-white
+  = link_to squirrel_path, class: "w-full block py-2.5 px-3 text-center text-gray-400 hover:text-gray-900 #{active_menu('squirrels')}"
+    i.fas.fa-home.fa-2x.mb-2.mx-auto
+    .text-xs ホーム
+  = link_to videos_path, class: "w-full block py-2.5 px-3 text-center text-gray-400 hover:text-gray-900 #{active_menu('videos')}"
+    i.fab.fa-youtube.fa-2x.mb-2.mx-auto
+    .text-xs ワークアウト
+  = link_to activity_path, class: "w-full block py-2.5 px-3 text-center text-gray-400 hover:text-gray-900 #{active_menu('activities')}"
+    i.fas.fa-user-circle.fa-2x.mb-2.mx-auto
+    .text-xs アクティビティ

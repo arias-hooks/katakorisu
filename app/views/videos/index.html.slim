@@ -1,7 +1,7 @@
 = javascript_pack_tag 'videos/index'
 - content_for(:title, t('.title'))
 
-h1 ワークアウト
+h1 class="text-3xl font-bold mt-2.5" ワークアウト
 
 h2= current_category(params[:category])
 
@@ -12,7 +12,8 @@ h2= current_category(params[:category])
 
 - if @videos.present?
   - @videos.each_with_index do |video, i|
-    .video id="video#{i}" data-youtube="#{video.youtube_id}"
-      .title
-      .duration
-      = image_tag "https://img.youtube.com/vi/#{video.youtube_id}/mqdefault.jpg", size: '80x45'
+    = link_to video
+      .video id="video#{i}" data-youtube="#{video.youtube_id}"
+        .title
+        .duration
+        = image_tag "https://img.youtube.com/vi/#{video.youtube_id}/mqdefault.jpg", size: '80x45'
