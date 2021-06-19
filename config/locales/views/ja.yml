@@ -1,11 +1,17 @@
 ja:
   defaults:
     register: 登録する
+    cancel: キャンセル
     play: 再生する
     finish: 完了する
+    ok: OK
+    give_acorn?: 肩こりすにどんぐりをあげますか？
+    animal: 匹
   squirrels:
     show:
       title: ホーム
+    update:
+      message: "%{item}匹の肩こリスが友達になりました！"
   activities:
     show:
       title: アクティビティ

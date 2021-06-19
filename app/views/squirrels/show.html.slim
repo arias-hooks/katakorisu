@@ -1,12 +1,24 @@
+= javascript_pack_tag 'squirrels/show'
 - content_for(:title, t('.title'))
 
-h1 class="text-3xl font-bold mt-2.5" ホーム
-p= "#{current_user.squirrel.number}匹"
-p= "#{current_user.acorn.number}個"
+h1 class="text-3xl font-bold mt-2.5"
+  = t('.title')
 
-- if current_user.decorate.acorn_exist?
-  = image_tag 'acron/exist.png'
+- if flash.notice.present?
+  = flash.notice
+
+p= animal_count(current_user.squirrel.number)
+p= "×#{current_user.acorn.number}"
+
+- if current_user.decorate.acorn_active?
+  = image_tag 'acron/exist.png', id: 'exist-acorn'
 - else
   = image_tag 'acron/no_exist.png'
 
-= image_tag 'squirrel/six.png'
+
+- if params[:friend_num]
+  = image_tag "eat_squirrel/#{params[:friend_num]}.png"
+- else
+  = image_tag "squirrel/#{current_user.squirrel.number}.png"
+
+= render 'confirm'
