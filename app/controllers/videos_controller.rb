@@ -1,7 +1,7 @@
 class VideosController < ApplicationController
-  def index
-    gon.youtube_api_key = ENV['YOUTUBE_API_KEY']
+  before_action :set_youtube_api, only: [:index, :show]
 
+  def index
     case params[:category]
     when 'stretch'
       @videos = Video.stretch.recent
@@ -12,5 +12,15 @@ class VideosController < ApplicationController
     when 'dance'
       @videos = Video.dance.recent
     end
+  end
+
+  def show
+    @video = Video.find(params[:id])
+  end
+
+  private
+
+  def set_youtube_api
+    gon.youtube_api_key = ENV['YOUTUBE_API_KEY']
   end
 end

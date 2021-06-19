@@ -1,0 +1,19 @@
+= javascript_pack_tag 'videos/show'
+- content_for(:title, t('.title'))
+
+h1 show
+
+#video data-youtube="#{@video.youtube_id}"
+  .title
+  .duration#duration
+  #player.mx-auto
+
+.p-2.w-full
+  button class="flex mx-auto rounded-full text-white bg-indigo-500 font-bold border-0 py-2 px-10 focus:outline-none hover:bg-indigo-600 text-xl" id="start-button"
+    = t('defaults.play')
+
+.p-2.w-full.mt-10
+  button class="flex mx-auto rounded-full text-white bg-gray-400 font-bold border-0 py-2 px-10 focus:outline-none text-xl" id="finish-button" disabled=""
+    = t('defaults.finish')
+
+= render partial: 'finish_modal'

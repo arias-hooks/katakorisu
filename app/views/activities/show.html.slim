@@ -5,7 +5,7 @@ h1 class="text-3xl font-bold mt-2.5" アクティビティ
 p#name
 = image_tag 'users/default.png', id: 'picture', size: '64', class: 'rounded-full'
 
-p= "友だちになった肩こリス：#{current_user.activity.video_views}匹"
+p= "友だちになった肩こリス：#{current_user.squirrel.total_number}匹"
 p= "動画の視聴数：#{current_user.activity.video_views}本"
 p= "ワークアウト時間：#{current_user.activity.video_viewing_time}分"
 

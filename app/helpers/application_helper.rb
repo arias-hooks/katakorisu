@@ -5,8 +5,8 @@ module ApplicationHelper
   end
 
   def active_menu(target_controller)
-    if params[:controller] == target_controller
-      'text-gray-900'
-    end
+    return unless params[:controller] == target_controller
+
+    'text-gray-900'
   end
 end
