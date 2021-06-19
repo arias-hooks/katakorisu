@@ -1,7 +1,7 @@
 class UserDecorator < Draper::Decorator
   delegate_all
 
-  def acorn_exist?
-    acorn.number.positive?
+  def acorn_active?
+    acorn.number.positive? && squirrel.number.positive?
   end
 end
