@@ -1,6 +1,8 @@
 ja:
   defaults:
     register: 登録する
+    play: 再生する
+    finish: 完了する
   squirrels:
     show:
       title: ホーム
@@ -9,4 +11,6 @@ ja:
       title: アクティビティ
   videos:
     index:
+      title: ワークアウト
+    show:
       title: ワークアウト
