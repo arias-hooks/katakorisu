@@ -1,7 +1,8 @@
 = javascript_pack_tag 'videos/index'
 - content_for(:title, t('.title'))
 
-h1 ワークアウト
+h1 class="text-3xl font-bold mt-2.5"
+  = t('.title')
 
 h2= current_category(params[:category])
 
@@ -11,8 +12,4 @@ h2= current_category(params[:category])
 = link_to I18n.t('enums.video.category.dance'), videos_path(category: 'dance')
 
 - if @videos.present?
-  - @videos.each_with_index do |video, i|
-    .video id="video#{i}" data-youtube="#{video.youtube_id}"
-      .title
-      .duration
-      = image_tag "https://img.youtube.com/vi/#{video.youtube_id}/mqdefault.jpg", size: '80x45'
+  = render @videos

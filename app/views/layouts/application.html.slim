@@ -11,5 +11,6 @@ html
     = javascript_pack_tag 'application'
     = stylesheet_pack_tag 'application'
   body
-    = yield
+    .container.mx-auto.pb-24
+      = yield
     = render 'shared/footer_menu'

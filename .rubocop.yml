@@ -110,3 +110,7 @@ Style/HashTransformValues:
 
 Bundler/OrderedGems:
   Enabled: false
+
+Rails/SkipsModelValidations:
+  Whitelist:
+    - increment!
