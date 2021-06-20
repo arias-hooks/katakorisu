@@ -1,11 +1,12 @@
 ja:
   defaults:
+    app_name: 肩こリス
     register: 登録する
     cancel: キャンセル
     play: 再生する
     finish: 完了する
     ok: OK
-    give_acorn?: 肩こりすにどんぐりをあげますか？
+    give_acorn?: 肩こリスにどんぐりをあげますか？
     animal: 匹
   squirrels:
     show:
