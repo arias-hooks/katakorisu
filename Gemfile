@@ -13,6 +13,7 @@ gem 'rails-i18n'
 gem 'seed-fu'
 gem 'slim-rails'
 gem 'tailwindcss-rails'
+gem 'whenever', require: false
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails', branch: 'main'
 gem 'rails', '~> 6.1.2', '>= 6.1.2.1'
