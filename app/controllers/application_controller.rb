@@ -23,8 +23,8 @@ class ApplicationController < ActionController::Base
   def render500(error = nil)
     logger.error(error.message)
     logger.error(error.backtrace.join('\n'))
-    ExceptionNotifier.notify_exception(e, env: request.env,
-                                          data: { message: 'error' })
+    ExceptionNotifier.notify_exception(error, env: request.env,
+                                              data: { message: 'error' })
     render file: Rails.root.join('public/500.html'), layout: false, status: :internal_server_error
   end
 end
