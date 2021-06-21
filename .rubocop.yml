@@ -20,6 +20,7 @@ AllCops:
     - 'spec/**/*'
     - 'tmp/**/*'
     - 'node_modules/**/*'
+    - 'lib/tasks/squirrel_increase.rake'
 
 #railsモードにする。railsプロジェクトなら基本trueにしておく。
 Rails:
