@@ -1,9 +1,25 @@
 class ApplicationController < ActionController::Base
   helper_method :current_user
 
+  rescue_from StandardError, with: :render_500
+  rescue_from ActiveRecord::RecordNotFound, with: :render_404
+  rescue_from ActionController::RoutingError, with: :render_404
+
   private
 
   def current_user
     @current_user ||= User.find(session[:user_id]) if session[:user_id]
+  end
+
+  def render_404
+    render file: Rails.root.join('public', '404.html'), layout: false, status: :not_found
+  end
+
+  def render_500(error = nil)
+    logger.error(error.message)
+    logger.error(error.backtrace.join('\n'))
+    ExceptionNotifier.notify_exception(e, env: request.env,
+      data: { message: 'error' })
+    render file: Rails.root.join('public', '500.html'), layout: false, status: :internal_server_error
   end
 end

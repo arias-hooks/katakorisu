@@ -96,6 +96,9 @@ GEM
     enum_help (0.0.17)
       activesupport (>= 3.0.0)
     erubi (1.10.0)
+    exception_notification (4.4.3)
+      actionmailer (>= 4.0, < 7)
+      activesupport (>= 4.0, < 7)
     factory_bot (6.2.0)
       activesupport (>= 5.0.0)
     factory_bot_rails (6.2.0)
@@ -242,6 +245,7 @@ GEM
       activerecord (>= 3.1)
       activesupport (>= 3.1)
     semantic_range (3.0.0)
+    slack-notifier (2.4.0)
     slim (4.1.0)
       temple (>= 0.7.6, < 0.9)
       tilt (>= 2.0.6, < 2.1)
@@ -293,6 +297,7 @@ DEPENDENCIES
   dotenv-rails
   draper
   enum_help
+  exception_notification
   factory_bot_rails
   gon
   html2slim
@@ -311,6 +316,7 @@ DEPENDENCIES
   rubocop-rspec
   sass-rails (>= 6)
   seed-fu
+  slack-notifier
   slim-rails
   spring
   tailwindcss-rails
