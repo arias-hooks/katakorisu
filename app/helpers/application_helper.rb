@@ -4,7 +4,7 @@ module ApplicationHelper
     page_title.empty? ? base_title : "#{page_title} - #{base_title}"
   end
 
-  def active_menu(target_controller)
+  def active_footer_menu(target_controller)
     return unless params[:controller] == target_controller
 
     'text-gray-900'

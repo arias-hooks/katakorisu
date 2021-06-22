@@ -1,5 +1,8 @@
-= link_to video
-  .video data-youtube="#{video.youtube_id}"
-    .title
-    .duration
-    = image_tag "https://img.youtube.com/vi/#{video.youtube_id}/mqdefault.jpg", size: '80x45'
+.flex.flex-wrap.text-gray-600
+  = link_to video do
+    .py-2.w-full
+      .h-full.flex.items-center.border-gray-200.border.p-2
+        = image_tag "https://img.youtube.com/vi/#{video.youtube_id}/mqdefault.jpg", class: "w-40 bg-gray-100 object-cover object-center flex-shrink-0 mr-4"
+        .flex-grow.video data-youtube="#{video.youtube_id}"
+          h2.text-gray-900.line-clamp-3.title
+          p.text-gray-500.mt-2.duration

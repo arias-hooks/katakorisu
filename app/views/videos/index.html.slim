@@ -1,42 +1,11 @@
 = javascript_pack_tag 'videos/index'
 - content_for(:title, t('.title'))
 
-h1 class="text-3xl font-bold mt-3"
+h1.text-3xl.font-bold.mt-3.ml-2
   = t('.title')
 
 - if @videos.present?
-  h2= current_category(params[:category])
+  = render 'category_menu'
   = render @videos
 - else
-  = link_to videos_path(category: 'stretch') do
-    .stretch-bg.flex.items-center.justify-center.text-center.m-auto.rounded-xl.mt-3
-      .py-12.text-2xl.tracking-wider.font-bold.text-white
-        = I18n.t('enums.video.category.stretch')
-  = link_to videos_path(category: 'yoga') do
-    .yoga-bg.flex.items-center.justify-center.text-center.m-auto.rounded-xl.mt-2
-      .py-12.text-2xl.tracking-wider.font-bold.text-white
-        = I18n.t('enums.video.category.yoga')
-  = link_to videos_path(category: 'weight_training') do
-    .weight-training-bg.flex.items-center.justify-center.text-center.m-auto.rounded-xl.mt-2
-      .py-12.text-2xl.tracking-wider.font-bold.text-white
-        = I18n.t('enums.video.category.weight_training')
-  = link_to videos_path(category: 'dance') do
-    .dance-bg.flex.items-center.justify-center.text-center.m-auto.rounded-xl.mt-2
-      .py-12.text-2xl.tracking-wider.font-bold.text-white
-        = I18n.t('enums.video.category.dance')
-
-
-
-/ .flex.flex-wrap.text-center.justify-between.items-center.mx-auto
-/   .layer-bg.flex.items-center.justify-center.mx-auto.mt-4.p-12.rounded-xl
-/     .text-xl.font-bold.text-white
-/       | ストレッチ
-/   .layer-bg.flex.items-center.justify-center.mx-auto.mt-4.p-12.rounded-xl
-/     .text-xl.font-bold.text-white
-/       | ヨガ
-/   .layer-bg.flex.items-center.justify-center.mx-auto.mt-4.p-12.rounded-xl
-/     .text-xl.font-bold.text-white
-/       | 筋トレ
-/   .layer-bg.flex.items-center.justify-center.mx-auto.mt-4.p-12.rounded-xl
-/     .text-xl.font-bold.text-white
-/       | ダンス
+  = render 'category_links'
