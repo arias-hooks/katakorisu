@@ -3,14 +3,15 @@ ja:
     app_name: 肩こリス
     register: 登録する
     cancel: キャンセル
+    close: 閉じる
     play: 再生する
     finish: 完了する
     ok: OK
-    give_acorn?: 肩こリスにどんぐりをあげますか？
     animal: 匹
   squirrels:
     show:
       title: ホーム
+      give_acorn?: 肩こリスにどんぐりをあげますか？
     update:
       message: "%{item}匹の肩こリスが友達になりました！"
   activities:
@@ -21,3 +22,6 @@ ja:
       title: ワークアウト
     show:
       title: ワークアウト
+      get: どんぐりをゲットしました！
+      detail: 肩こリスの大好物はどんぐりです。どんぐりを肩こリスにあげると、肩こリスが友達になります！
+      go_squirrel: とんぐりを肩こリスにあげに行く

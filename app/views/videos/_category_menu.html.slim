@@ -1,0 +1,11 @@
+section.text-gray-600
+  .container.px-2.py-3.mx-auto.flex.flex-wrap.flex-col
+    .flex.mx-auto.flex-wrap.mb-3.w-full
+      = link_to videos_path(category: 'stretch'), class: "sm:px-6 py-3 sm:w-auto justify-center sm:justify-start border-b-2 title-font font-medium inline-flex items-center leading-none  tracking-wider rounded-t w-1/2 hover:text-yellow-500 #{active_category_menu('stretch')}" do
+        = I18n.t('enums.video.category.stretch')
+      = link_to videos_path(category: 'yoga'), class: "sm:px-6 py-3 sm:w-auto justify-center sm:justify-start border-b-2 title-font font-medium inline-flex items-center.leading-none.border-gray-200.tracking-wider w-1/2 hover:text-yellow-500 #{active_category_menu('yoga')}" do
+        = I18n.t('enums.video.category.yoga')
+      = link_to videos_path(category: 'weight_training'), class: "sm:px-6 py-3 sm:w-auto justify-center sm:justify-start border-b-2 title-font font-medium inline-flex items-center.leading-none.border-gray-200.tracking-wider w-1/2 hover:text-yellow-500 #{active_category_menu('weight_training')}" do
+        = I18n.t('enums.video.category.weight_training')
+      = link_to videos_path(category: 'dance'), class: "sm:px-6 py-3 sm:w-auto justify-center sm:justify-start border-b-2 title-font font-medium inline-flex items-center.leading-none.border-gray-200.tracking-wider w-1/2 hover:text-yellow-500 #{active_category_menu('dance')}" do
+        = I18n.t('enums.video.category.dance')

@@ -1,15 +1,12 @@
 = javascript_pack_tag 'videos/index'
 - content_for(:title, t('.title'))
 
-h1 class="text-3xl font-bold mt-2.5"
+h1.text-3xl.font-bold.mt-3.ml-2
   = t('.title')
 
-h2= current_category(params[:category])
-
-= link_to I18n.t('enums.video.category.stretch'), videos_path(category: 'stretch')
-= link_to I18n.t('enums.video.category.yoga'), videos_path(category: 'yoga')
-= link_to I18n.t('enums.video.category.weight_training'), videos_path(category: 'weight_training')
-= link_to I18n.t('enums.video.category.dance'), videos_path(category: 'dance')
-
 - if @videos.present?
+  = render 'category_menu'
   = render @videos
+  = paginate @videos
+- else
+  = render 'category_links'

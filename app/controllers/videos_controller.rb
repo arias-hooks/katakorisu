@@ -4,13 +4,13 @@ class VideosController < ApplicationController
   def index
     case params[:category]
     when 'stretch'
-      @videos = Video.stretch.recent
+      @videos = Video.stretch.recent.page(params[:page])
     when 'yoga'
-      @videos = Video.yoga.recent
+      @videos = Video.yoga.recent.page(params[:page])
     when 'weight_training'
-      @videos = Video.weight_training.recent
+      @videos = Video.weight_training.recent.page(params[:page])
     when 'dance'
-      @videos = Video.dance.recent
+      @videos = Video.dance.recent.page(params[:page])
     end
   end
 

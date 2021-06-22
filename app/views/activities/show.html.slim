@@ -1,7 +1,9 @@
 - content_for(:title, t('.title'))
 = javascript_pack_tag 'activities/show'
 
-h1 class="text-3xl font-bold mt-2.5" アクティビティ
+h1.text-3xl.font-bold.mt-3.ml-2
+  = t('.title')
+
 p#name
 = image_tag 'users/default.png', id: 'picture', size: '64', class: 'rounded-full'
 
