@@ -11,10 +11,10 @@ h1.text-3xl.font-bold.mt-3.ml-2
   .p-2.w-full
     button class="flex mx-auto rounded-full text-white bg-blue-600 font-bold border-0 py-2 px-10 focus:outline-none hover:bg-blue-700 text-xl" id="start-button"
       = t('defaults.play')
-  .p-2.w-full.mt-2
+  .p-2.w-full class="mt-0.5"
   button class="flex mx-auto rounded-full text-gray-600 bg-gray-100 border-0 py-2 px-10 focus:outline-none text-xl" id="finish-button" disabled=""
     = t('defaults.finish')
-  p.text-xs.text-gray-500.mt-3
+  p#notes.text-xs.text-gray-500.mt-3
     = t('.notes')
 
 = render partial: 'finish_modal'
