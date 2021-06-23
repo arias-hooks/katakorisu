@@ -1,6 +1,8 @@
 document.addEventListener('DOMContentLoaded', () => {
   const video = document.getElementById('video');
   const youtube_id = video.dataset.youtube;
+  const titleElement = document.getElementById('title');
+  const durationElement = document.getElementById('duration');
   const url = `https://www.googleapis.com/youtube/v3/videos?id=${youtube_id}&key=${gon.youtube_api_key}&part=snippet, contentDetails&fields=items(snippet(title), contentDetails(duration))`
   let videoSeconds;
   fetch(url)
@@ -9,7 +11,7 @@ document.addEventListener('DOMContentLoaded', () => {
       const rawDuration = data['items'][0]['contentDetails']['duration']
       const h = /^PT([0-9]+)H/.exec(rawDuration) ? `${/^PT([0-9]+)H/.exec(duration)[1]}:` : ''
       const m = /([0-9]+)M/.exec(rawDuration) ? `${/([0-9]+)M/.exec(rawDuration)[1]}:` : '00:'
-      const s = /([0-9]+)S$/.exec(rawDuration) ? /([0-9]+)S$/.exec(rawDuration)[1] : '00'
+      const s = /([0-9]+)S$/.exec(rawDuration) ? /([0-9]+)S$/.exec(rawDuration)[1].padStart(2, '0') : '00'
       const title = data['items'][0]['snippet']['title']
       const duration = `${h}${m}${s}`
       const a = duration.split(':');
@@ -18,8 +20,8 @@ document.addEventListener('DOMContentLoaded', () => {
       } else {
         videoSeconds =  (a[0] * 60 | 0) + (a[1] | 0)
       }
-      video.children[0].innerText = title
-      video.children[1].innerText = duration
+      titleElement.innerText = title
+      durationElement.innerText = duration
     })
 
   const tag = document.createElement('script');
@@ -53,7 +55,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
   function FinishButtonActive() {
     FinishButton.disabled = false;
-    FinishButton.classList.add('bg-green-500');
+    FinishButton.classList.add('font-bold', 'text-white', 'bg-yellow-500');
   }
 
   let start = false;
