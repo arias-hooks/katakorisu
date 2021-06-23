@@ -1,6 +1,9 @@
 document.addEventListener('DOMContentLoaded', () => {
   const video = document.getElementById('video');
   const youtube_id = video.dataset.youtube;
+  const titleElement = document.getElementById('title');
+  const durationElement = document.getElementById('duration');
+  const token = document.querySelector('meta[name="csrf-token"]').getAttribute('content');
   const url = `https://www.googleapis.com/youtube/v3/videos?id=${youtube_id}&key=${gon.youtube_api_key}&part=snippet, contentDetails&fields=items(snippet(title), contentDetails(duration))`
   let videoSeconds;
   fetch(url)
@@ -9,17 +12,17 @@ document.addEventListener('DOMContentLoaded', () => {
       const rawDuration = data['items'][0]['contentDetails']['duration']
       const h = /^PT([0-9]+)H/.exec(rawDuration) ? `${/^PT([0-9]+)H/.exec(duration)[1]}:` : ''
       const m = /([0-9]+)M/.exec(rawDuration) ? `${/([0-9]+)M/.exec(rawDuration)[1]}:` : '00:'
-      const s = /([0-9]+)S$/.exec(rawDuration) ? /([0-9]+)S$/.exec(rawDuration)[1] : '00'
+      const s = /([0-9]+)S$/.exec(rawDuration) ? /([0-9]+)S$/.exec(rawDuration)[1].padStart(2, '0') : '00'
       const title = data['items'][0]['snippet']['title']
       const duration = `${h}${m}${s}`
       const a = duration.split(':');
       if (a.length === 3) {
         videoSeconds = (a[0] * 60 * 60 | 0) + (a[1] * 60 | 0) + (a[2] | 0);
       } else {
-        videoSeconds =  (a[0] * 60 | 0) + (a[1] | 0)
+        videoSeconds = (a[0] * 60 | 0) + (a[1] | 0)
       }
-      video.children[0].innerText = title
-      video.children[1].innerText = duration
+      titleElement.innerText = title
+      durationElement.innerText = duration
     })
 
   const tag = document.createElement('script');
@@ -29,6 +32,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
   const startButton = document.getElementById('start-button');
   const FinishButton = document.getElementById('finish-button');
+  const notes = document.getElementById('notes');
   const closeButton = document.getElementById('close-button');
   const modal = document.getElementById('modal');
 
@@ -53,7 +57,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
   function FinishButtonActive() {
     FinishButton.disabled = false;
-    FinishButton.classList.add('bg-green-500');
+    FinishButton.classList.add('font-bold', 'text-white', 'bg-yellow-500');
   }
 
   let start = false;
@@ -64,14 +68,22 @@ document.addEventListener('DOMContentLoaded', () => {
       done = true;
     }
     if (event.data === YT.PlayerState.ENDED && !finish) {
+      videoFinish();
       modal.classList.add('scale-100');
       FinishButton.remove();
+      notes.remove();
       finish = true;
     }
   }
 
-  const token = document.querySelector('meta[name="csrf-token"]').getAttribute('content');
+
   FinishButton.addEventListener('click', () => {
+    videoFinish();
+    FinishButton.remove();
+    notes.remove();
+  })
+
+  function videoFinish() {
     const body = `duration=${videoSeconds}`;
     const request = new Request('/activity', {
       headers: {
@@ -95,7 +107,7 @@ document.addEventListener('DOMContentLoaded', () => {
       .catch(() => {
         alert('エラーが発生しました');
       })
-  })
+  }
 
   closeButton.addEventListener('click', () => {
     modal.classList.remove('scale-100');
