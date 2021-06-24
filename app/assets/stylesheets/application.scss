@@ -1,36 +1,3 @@
-/* カテゴリー選択画面の背景画像の読み込み */
-.stretch-bg {
-  background: url(video_category/stretch.jpg) no-repeat 0 0;
-  background-size: 100%;
-}
+@import "videos";
+@import "activities";
 
-.yoga-bg {
-  background: url(video_category/yoga.jpg) no-repeat 0 0;
-  background-size: 100%;
-}
-
-.weight-training-bg {
-  background: url(video_category/weight_training.jpg) no-repeat 0 0;
-  background-size: 100%;
-}
-
-.dance-bg {
-  background: url(video_category/dance.jpg) no-repeat 0 0;
-  background-size: 100%;
-}
-
-.sns-wrap {
-  margin: 10px auto;
-  padding: 0;
-  overflow: hidden;
-  list-style: none;
-}
-
-.sns-wrap li {
-  float: left;
-  margin: 0 10px 0 0;
-}
-
-.sns-wrap li.twitter {
-  width: 90px;
-}
