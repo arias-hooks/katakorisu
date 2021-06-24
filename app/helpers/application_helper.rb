@@ -9,4 +9,16 @@ module ApplicationHelper
 
     'text-gray-900'
   end
+
+  def animal_count(value)
+    "#{value}#{t('defaults.animal')}"
+  end
+
+  def views_count(value)
+    "#{value}#{t('defaults.views')}"
+  end
+
+  def workout_time_count(value)
+    "#{value / 60}#{t('defaults.minute')}"
+  end
 end

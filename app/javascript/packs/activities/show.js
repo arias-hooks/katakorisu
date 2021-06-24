@@ -8,6 +8,11 @@ document.addEventListener('DOMContentLoaded', () => {
     liffId: gon.liff_id
   })
     .then(() => {
+      if (!liff.isLoggedIn()) {
+        liff.login()
+      }
+    })
+    .then(() => {
       liff.getProfile()
         .then(user => {
           if (typeof user.displayName !== 'undefined') {
