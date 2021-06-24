@@ -1,6 +1,7 @@
 ja:
   defaults:
     app_name: 肩こリス
+    app_detail: 肩こり解消サポートサービス「肩こリス」
     register: 登録する
     cancel: キャンセル
     close: 閉じる
@@ -8,6 +9,8 @@ ja:
     finish: 完了する
     ok: OK
     animal: 匹
+    views: 本
+    minute: 分
   squirrels:
     show:
       title: ホーム

@@ -18,3 +18,19 @@
   background: url(video_category/dance.jpg) no-repeat 0 0;
   background-size: 100%;
 }
+
+.sns-wrap {
+  margin: 10px auto;
+  padding: 0;
+  overflow: hidden;
+  list-style: none;
+}
+
+.sns-wrap li {
+  float: left;
+  margin: 0 10px 0 0;
+}
+
+.sns-wrap li.twitter {
+  width: 90px;
+}
