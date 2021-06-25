@@ -64,23 +64,17 @@ document.addEventListener('DOMContentLoaded', () => {
   let finish = false;
   function onPlayerStateChange(event) {
     if (event.data == YT.PlayerState.PLAYING && !start) {
-      setTimeout(FinishButtonActive, 3000);
+      setTimeout(FinishButtonActive, 60000);
       done = true;
     }
     if (event.data === YT.PlayerState.ENDED && !finish) {
       videoFinish();
-      modal.classList.add('scale-100');
-      FinishButton.remove();
-      notes.remove();
-      finish = true;
     }
   }
 
 
   FinishButton.addEventListener('click', () => {
     videoFinish();
-    FinishButton.remove();
-    notes.remove();
   })
 
   function videoFinish() {
@@ -100,6 +94,8 @@ document.addEventListener('DOMContentLoaded', () => {
         if (data['status'] === 200) {
           modal.classList.add('scale-100');
           FinishButton.remove();
+          notes.remove();
+          finish = true;
         } else {
           throw new Error('statusError');
         }
