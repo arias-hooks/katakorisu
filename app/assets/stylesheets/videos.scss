@@ -1,3 +1,20 @@
-// Place all the styles related to the videos controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: https://sass-lang.com/
+/* カテゴリー選択画面の背景画像の読み込み */
+.stretch-bg {
+  background: url(video_category/stretch.jpg) no-repeat 0 0;
+  background-size: 100%;
+}
+
+.yoga-bg {
+  background: url(video_category/yoga.jpg) no-repeat 0 0;
+  background-size: 100%;
+}
+
+.weight-training-bg {
+  background: url(video_category/weight_training.jpg) no-repeat 0 0;
+  background-size: 100%;
+}
+
+.dance-bg {
+  background: url(video_category/dance.jpg) no-repeat 0 0;
+  background-size: 100%;
+}

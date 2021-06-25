@@ -6,9 +6,7 @@
 import Rails from "@rails/ujs"
 import * as ActiveStorage from "@rails/activestorage"
 import "channels"
-import 'bootstrap'
-import '@fortawesome/fontawesome-free/js/all';
-import '../stylesheets/application'
+import '../css/tailwind.scss'
 
 Rails.start()
 ActiveStorage.start()

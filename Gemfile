@@ -3,10 +3,12 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
 ruby '2.7.2'
 
+gem 'bootstrap'
 gem 'dotenv-rails'
 gem 'draper'
 gem 'enum_help'
 gem 'exception_notification'
+gem 'font-awesome-sass'
 gem 'gon'
 gem 'html2slim'
 gem 'kaminari'
