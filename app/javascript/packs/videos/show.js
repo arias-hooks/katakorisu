@@ -102,7 +102,7 @@ document.addEventListener('DOMContentLoaded', () => {
         }
       })
       .catch(() => {
-        alert('エラーが発生しました');
+        swal('エラーが発生しました');
       })
   }
 

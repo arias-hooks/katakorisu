@@ -7,11 +7,11 @@ document.addEventListener('DOMContentLoaded', () => {
   liff.init({
     liffId: gon.liff_id
   })
-    .then(() => {
-      if (!liff.isLoggedIn()) {
-        liff.login()
-      }
-    })
+    // .then(() => {
+    //   if (!liff.isLoggedIn()) {
+    //     liff.login()
+    //   }
+    // })
     .then(() => {
       liff.getProfile()
         .then(user => {
@@ -38,10 +38,10 @@ document.addEventListener('DOMContentLoaded', () => {
     fetch(request)
       .then(response => response.json())
       .then(data => {
-        alert(`${data.notification}に変更しました。`);
+        swal(`${data.notification}に変更しました。`);
       })
       .catch(() => {
-        alert('通知設定の更新に失敗しました');
+        swal('通知設定の更新に失敗しました');
       })
   });
 })
