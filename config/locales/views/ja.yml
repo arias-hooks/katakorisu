@@ -11,6 +11,7 @@ ja:
     animal: 匹
     views: 本
     minute: 分
+    current: 現在
   squirrels:
     show:
       title: ホーム

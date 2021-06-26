@@ -6,12 +6,8 @@ html
     script[charset="utf-8" src="https://static.line-scdn.net/liff/edge/2/sdk.js"]
     = csrf_meta_tags
     = csp_meta_tag
-    = include_gon
     = stylesheet_link_tag 'application', media: 'all'
     = javascript_pack_tag 'application'
     = stylesheet_pack_tag 'application'
-    script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js" 
-  body.bgc
-    .container.mx-auto.pb-24
-      = yield
-    = render 'shared/footer_menu'
+  body
+    = yield

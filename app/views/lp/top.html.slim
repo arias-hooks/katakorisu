@@ -1,0 +1,30 @@
+div.wrap
+  div.text-gray-600.background-color
+    div.text-center.font.text-2xl
+      | 肩こリス
+      br
+
+    .flex.justify-center.items-center.py-4
+      img src="https://qr-official.line.me/sid/M/514sqedb.png"
+      br
+      div
+        <a href="https://lin.ee/utNdmb1"><img src="https://scdn.line-apps.com/n/line_add_friends/btn/ja.png" alt="友だち追加" height="36" border="0"></a>
+      br
+    .flex.justify-center.items-center.py-4
+      ul.sns-wrap
+        li.twitter
+          a.twitter-share-button data-lang="ja" data-show-count="false" data-size="large" data-text=("#{t('defaults.app_detail')}") data-url="#{request.base_url}" data-hashtags="#{t('defaults.app_name')}" href="https://twitter.com/share?ref_src=twsrc%5Etfw"
+          script async="" charset="utf-8" src="https://platform.twitter.com/widgets.js"
+
+        li.line
+          .line-it-button data-color="default" data-count="false" data-lang="ja" data-size="large" data-type="share-a" data-url="#{request.base_url}" data-ver="3" style=("display: none;")
+          script async="async" defer="defer" src="https://www.line-website.com/social-plugins/js/thirdparty/loader.min.js"
+
+  footer.bg-gray-300.text-center
+    = link_to '/terms', class: 'm-8 text-blue-600' do
+      | 利用規約
+    br
+    = link_to '/privacy', class: 'm-8 text-blue-600' do
+      | プライバシーポリシー
+    div.text-lg
+      = '© 2021 肩こリス'
