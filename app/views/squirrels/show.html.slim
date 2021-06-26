@@ -14,8 +14,8 @@ h1.text-3xl.font-bold.mt-3.ml-2
 
 .flex.justify-end.items-center.mx-auto
   - unless params[:friend_num]
-    .rounded-3xl.border-2.border-gray-400.mr-8.bg-white
-      .flex.items-center.justify-centertext-center.text-2xl.font-medium.text-gray-700.py-2.px-4
+    .rounded-3xl.border-2.border-gray-400.mr-6.bg-white
+      .flex.items-center.justify-centertext-center.text-xl.font-medium.text-gray-700.py-2.px-4
         = t('defaults.current')
         = animal_count(current_user.squirrel.number)
   .acron-count
