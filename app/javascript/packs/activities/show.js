@@ -38,7 +38,6 @@ document.addEventListener('DOMContentLoaded', () => {
     fetch(request)
       .then(response => response.json())
       .then(data => {
-        console.log(data);
         alert(`${data.notification}に変更しました。`);
       })
       .catch(() => {

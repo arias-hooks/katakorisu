@@ -57,6 +57,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
   function FinishButtonActive() {
     FinishButton.disabled = false;
+    FinishButton.classList.remove('bg-white');
     FinishButton.classList.add('font-bold', 'text-white', 'bg-yellow-500');
   }
 
@@ -64,7 +65,7 @@ document.addEventListener('DOMContentLoaded', () => {
   let finish = false;
   function onPlayerStateChange(event) {
     if (event.data == YT.PlayerState.PLAYING && !start) {
-      setTimeout(FinishButtonActive, 60000);
+      setTimeout(FinishButtonActive, 3000);
       done = true;
     }
     if (event.data === YT.PlayerState.ENDED && !finish) {
