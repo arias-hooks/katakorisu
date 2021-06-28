@@ -7,7 +7,6 @@ ja:
       setting: 設定
       activity: アクティビティ
       video: エクササイズ動画
-      user_video: 登録した動画
     attributes:
       user:
         line_user_id: LINEユーザーID
@@ -21,8 +20,6 @@ ja:
         video_viewing_time: エクササイズ時間
       setting:
         notification: 通知設定
-      user_video:
-        youtube_id: Youtubeの動画ID
       video:
         youtube_id: Youtubeの動画ID
         category: カテゴリー
