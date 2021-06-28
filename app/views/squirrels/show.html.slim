@@ -8,9 +8,9 @@ h1.text-3xl.font-bold.mt-3.ml-2
 
 .squirrel.mt-4.flex.justify-between.items-center.mx-auto
   - if params[:friend_num]
-    = image_tag "eat_squirrel/#{params[:friend_num]}.png"
+    = image_tag "eat_squirrel/#{params[:friend_num]}.gif"
   - else
-    = image_tag "squirrel/#{current_user.squirrel.number}.png"
+    = image_tag "squirrel/#{current_user.squirrel.number}.gif"
 
 .flex.justify-end.items-center.mx-auto
   - unless params[:friend_num]
