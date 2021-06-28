@@ -21,6 +21,7 @@ ja:
   activities:
     show:
       title: アクティビティ
+      notification_detail: （9~21時の間、肩こリスは1時間に1匹ずつ増えます。最大で6匹まで増えます。）
   videos:
     index:
       title: ワークアウト
