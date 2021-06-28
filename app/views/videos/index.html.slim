@@ -9,4 +9,6 @@ h1.text-3xl.font-bold.mt-3.ml-2
   = render @videos
   = paginate @videos
 - else
+  h2.text-lg.font-bold.mt-3.text-center
+    = t('.notes')
   = render 'category_links'
