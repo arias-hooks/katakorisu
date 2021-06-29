@@ -6,8 +6,7 @@ ja:
       acorn: どんぐり
       setting: 設定
       activity: アクティビティ
-      video: ワークアウト動画
-      user_video: 登録した動画
+      video: エクササイズ動画
     attributes:
       user:
         line_user_id: LINEユーザーID
@@ -18,11 +17,9 @@ ja:
         number: どんぐりの数
       activity:
         video_views: 動画の視聴数
-        video_viewing_time: ワークアウト時間
+        video_viewing_time: エクササイズ時間
       setting:
         notification: 通知設定
-      user_video:
-        youtube_id: Youtubeの動画ID
       video:
         youtube_id: Youtubeの動画ID
         category: カテゴリー

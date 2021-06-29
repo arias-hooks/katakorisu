@@ -37,3 +37,5 @@ yarn-debug.log*
 
 .github
 .env
+localhost-key.pem
+localhost.pem

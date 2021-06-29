@@ -65,7 +65,7 @@ document.addEventListener('DOMContentLoaded', () => {
   let finish = false;
   function onPlayerStateChange(event) {
     if (event.data == YT.PlayerState.PLAYING && !start) {
-      setTimeout(FinishButtonActive, 3000);
+      setTimeout(FinishButtonActive, 60000);
       done = true;
     }
     if (event.data === YT.PlayerState.ENDED && !finish) {
