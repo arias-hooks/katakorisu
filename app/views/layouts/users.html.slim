@@ -10,8 +10,6 @@ html
     = stylesheet_link_tag 'application', media: 'all'
     = javascript_pack_tag 'application'
     = stylesheet_pack_tag 'application'
-    script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"
   body.bgc
-    .container.mx-auto.pb-24.text-gray-900
+    .container.mx-auto.pb-24
       = yield
-    = render 'shared/footer_menu'

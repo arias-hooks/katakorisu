@@ -5,7 +5,8 @@ document.addEventListener('DOMContentLoaded', () => {
   })
     .then(() => {
       if (!liff.isLoggedIn()) {
-        liff.login()
+        window.location = '/top'
+        // liff.login()
       }
     })
     .then(() => {

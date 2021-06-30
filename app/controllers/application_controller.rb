@@ -13,7 +13,7 @@ class ApplicationController < ActionController::Base
   end
 
   def login_required
-    redirect_to new_user_path unless current_user
+    redirect_to top_path unless current_user
   end
 
   def render404
