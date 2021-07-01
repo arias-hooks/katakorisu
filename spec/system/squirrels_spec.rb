@@ -44,6 +44,7 @@ RSpec.describe "Squirrels", type: :system do
           find("img[id='acorn']").click
           expect(page).to have_content('肩こリスにどんぐりをあげますか？')
           click_on 'OK'
+          sleep(1)
           expect(page).to have_selector("img[class='eat_squirrel/1.gif']")
           expect(page).to have_content('1匹の肩こリスが友達になりました！')
         end
