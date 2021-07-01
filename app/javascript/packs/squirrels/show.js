@@ -1,5 +1,5 @@
 document.addEventListener('DOMContentLoaded', () => {
-  const acorn = document.getElementById('exist-acorn');
+  const acorn = document.getElementById('acorn');
   const closeButton = document.getElementById('close-button');
   const modal = document.getElementById('modal');
 

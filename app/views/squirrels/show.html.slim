@@ -4,13 +4,17 @@
 h1.text-3xl.font-bold.mt-3.ml-2
   = t('.title')
 
-= render 'shared/flash_message'
+- if flash.notice.present?
+  = render 'shared/flash_message'
+- elsif flash.notice.blank? && current_user.acorn.number.zero?
+  p.text-gray-900.mt-3.text-center.font-bold
+    = t('.detail')
 
-.squirrel.mt-4.flex.justify-between.items-center.mx-auto
+.squirrel.mt-4.flex.justify-between.items-center.mx-auto.max-w-screen-sm
   - if params[:friend_num]
-    = image_tag "eat_squirrel/#{params[:friend_num]}.gif"
+    = image_tag "eat_squirrel/#{params[:friend_num]}.gif", class: "eat_squirrel/#{params[:friend_num]}.gif"
   - else
-    = image_tag "squirrel/#{current_user.squirrel.number}.gif"
+    = image_tag "squirrel/#{current_user.squirrel.number}.gif", class: "squirrel/#{current_user.squirrel.number}.gif"
 
 .flex.justify-end.items-center.mx-auto
   - unless params[:friend_num]
@@ -21,11 +25,15 @@ h1.text-3xl.font-bold.mt-3.ml-2
   .acron-count
     .flex.justify-end.px-3.mt-2
       - if current_user.decorate.acorn_active?
-        = image_tag 'acron/acron.png', class: 'rounded-full border-2 border-gray-400 w-28 h-28 bg-white', id: 'exist-acorn'
+        = image_tag 'acron/acron.png', class: 'exist-acorn rounded-full border-2 border-gray-400 w-28 h-28 bg-white cursor-pointer', id: 'acorn', alt: 'acorn'
       - else
-        = image_tag 'acron/acron.png', class: 'rounded-full border-2 border-gray-400 w-28 h-28 opacity-40 bg-white'
+        = image_tag 'acron/acron.png', class: 'not-exist-acorn rounded-full border-2 border-gray-400 w-28 h-28 opacity-40 bg-white', id: 'acorn', alt: 'acorn'
     .flex.justify-end.px-2
       .text-2xl.text-gray-700.font-medium
         = "× #{current_user.acorn.number}"
+
+- if current_user.decorate.acorn_active?
+  p.text-xs.text-gray-500.mt-3.text-center
+    = t('.notes')
 
 = render 'confirm'
