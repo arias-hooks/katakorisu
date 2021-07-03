@@ -1,5 +1,6 @@
 lock "~> 3.16.0"
 
+set :nginx_downstream_uses_ssl, true
 set :application, "katakorisu"
 set :repo_url, "git@github.com:arias-hooks/katakorisu.git"
 set :user, 'asa_koshiro'
