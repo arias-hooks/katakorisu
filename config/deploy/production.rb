@@ -1,3 +1,5 @@
+server '35.75.152.151', user: 'asa_koshiro', roles: %w[app db web]
+
 # server-based syntax
 # ======================
 # Defines a single server with a list of roles and multiple properties.
@@ -16,9 +18,6 @@
 # group is considered to be the first unless any hosts have the primary
 # property set. Specify the username and a domain or IP for the server.
 # Don't use `:all`, it's a meta role.
-role :app, 'asa_koshiro@54.250.245.90'
-role :web, 'asa_koshiro@54.250.245.90'
-role :db, 'asa_koshiro@54.250.245.90'
 
 # Configuration
 # =============
@@ -27,8 +26,6 @@ role :db, 'asa_koshiro@54.250.245.90'
 # For available Capistrano configuration variables see the documentation page.
 # http://capistranorb.com/documentation/getting-started/configuration/
 # Feel free to add new variables to customise your setup.
-
-
 
 # Custom SSH Options
 # ==================
