@@ -28,7 +28,7 @@ namespace :deploy do
       sudo :mkdir, '-p', '/etc/nginx/sites-enabled'
       sudo :mkdir, '-p', '/etc/nginx/sites-available'
 
-      upload!('.env.production', "/var/www/Date_me/shared/.env")
+      upload!('.env.production', "/var/www/katakorisu/shared/.env")
       upload!('config/database.yml', "/var/www/katakorisu/shared/config/database.yml")
       upload!('config/master.key', "/var/www/katakorisu/shared/config/master.key")
     end
