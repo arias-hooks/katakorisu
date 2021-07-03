@@ -16,9 +16,9 @@
 # group is considered to be the first unless any hosts have the primary
 # property set. Specify the username and a domain or IP for the server.
 # Don't use `:all`, it's a meta role.
-role :app, 'asa_koshiro@52.196.19.201'
-role :web, 'asa_koshiro@52.196.19.201'
-role :db, 'asa_koshiro@52.196.19.201'
+role :app, 'asa_koshiro@54.250.245.90'
+role :web, 'asa_koshiro@54.250.245.90'
+role :db, 'asa_koshiro@54.250.245.90'
 
 
 # Configuration
