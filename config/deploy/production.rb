@@ -20,8 +20,6 @@ role :app, 'asa_koshiro@54.250.245.90'
 role :web, 'asa_koshiro@54.250.245.90'
 role :db, 'asa_koshiro@54.250.245.90'
 
-set :puma_service_unit_env_file, '/etc/environment'
-
 # Configuration
 # =============
 # You can set any configuration variable like in config/deploy.rb

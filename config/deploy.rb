@@ -16,18 +16,8 @@ set :puma_access_log, "/var/www/katakorisu/shared/log/puma.error.log"
 set :puma_error_log, "/var/www/katakorisu/shared/log/puma.access.log"
 set :puma_preload_app, true
 set :branch, ENV['BRANCH'] || "main"
-
-namespace :puma do
-  desc 'Create Directories for Puma Pids and Socket'
-  task :make_dirs do
-    on roles(:app) do
-      execute "mkdir /var/www/katakorisu/shared/tmp/sockets -p"
-      execute "mkdir /var/www/katakorisu/shared/tmp/pids -p"
-    end
-  end
-
-  before :start, :make_dirs
-end
+set :puma_systemctl_bin, '/usr/bin/systemctl'
+set :puma_systemctl_user, :system
 
 namespace :deploy do
   desc 'upload important files'
