@@ -15,6 +15,7 @@ set :puma_pid, "/var/www/katakorisu/shared/tmp/pids/puma.pid"
 set :puma_access_log, "/var/www/katakorisu/shared/log/puma.error.log"
 set :puma_error_log, "/var/www/katakorisu/shared/log/puma.access.log"
 set :puma_preload_app, true
+set :branch, ENV['BRANCH'] || "main"
 
 namespace :puma do
   desc 'Create Directories for Puma Pids and Socket'
