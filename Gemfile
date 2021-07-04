@@ -86,6 +86,7 @@ group :development do
   gem 'capistrano3-puma', github: "seuros/capistrano-puma"
   gem 'capistrano-nginx'
   gem 'capistrano-yarn'
+  gem 'capistrano-rails-console'
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
