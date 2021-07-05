@@ -14,7 +14,7 @@ RSpec.describe Activity, type: :model do
 
       it 'video_viewsが0未満なら無効' do
         activity.video_views = rand(-100...0)
-        expect(activity.valid?).to eq(false)
+        expect(activity).to be_invalid
       end
     end
 
@@ -26,7 +26,7 @@ RSpec.describe Activity, type: :model do
 
       it 'video_viewing_timeが0未満なら無効' do
         activity.video_viewing_time = rand(-100...0)
-        expect(activity.valid?).to eq(false)
+        expect(activity).to be_invalid
       end
     end
   end

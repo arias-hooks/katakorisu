@@ -14,7 +14,7 @@ RSpec.describe Acorn, type: :model do
 
       it 'numberが0未満なら無効' do
         acorn.number = rand(-100...0)
-        expect(acorn.valid?).to eq(false)
+        expect(acorn).to be_invalid
       end
     end
   end

@@ -62,12 +62,12 @@ RSpec.describe Squirrel, type: :model do
 
       it 'numberが0未満なら無効' do
         squirrel.number = rand(-100...0)
-        expect(squirrel.valid?).to eq(false)
+        expect(squirrel).to be_invalid
       end
 
       it 'numberが7以上なら無効' do
         squirrel.number = rand(7..100)
-        expect(squirrel.valid?).to eq(false)
+        expect(squirrel).to be_invalid
       end
     end
 
@@ -79,7 +79,7 @@ RSpec.describe Squirrel, type: :model do
 
       it 'total_numberが0未満なら無効' do
         squirrel.total_number = rand(-100...0)
-        expect(squirrel.valid?).to eq(false)
+        expect(squirrel).to be_invalid
       end
     end
   end

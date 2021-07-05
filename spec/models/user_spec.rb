@@ -9,13 +9,13 @@ RSpec.describe User, type: :model do
 
     it 'line_user_idが空なら無効' do
       user = build(:user, line_user_id: '')
-      expect(user.valid?).to eq(false)
+      expect(user).to be_invalid
     end
 
     it 'line_user_idが重複していたら無効' do
       user = create(:user)
       user_with_duplicate_line_user_id = build(:user, line_user_id: user.line_user_id)
-      expect(user_with_duplicate_line_user_id.valid?).to eq(false)
+      expect(user_with_duplicate_line_user_id).to be_invalid
     end
   end
 end
