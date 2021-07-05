@@ -12,6 +12,8 @@ html
     = javascript_pack_tag 'application'
     = stylesheet_pack_tag 'application'
     script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"
+    - if Rails.env.production?
+      = render './google_analytics'
   body.bgc
     .container.mx-auto.pb-24.text-gray-900
       = yield
