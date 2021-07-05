@@ -19,6 +19,7 @@ set :puma_preload_app, true
 set :branch, ENV['BRANCH'] || "main"
 set :puma_systemctl_bin, '/usr/bin/systemctl'
 set :puma_systemctl_user, :system
+set :whenever_identifier, ->{ "#{fetch(:application)}_#{fetch(:stage)}" }
 
 namespace :deploy do
   desc 'upload important files'
@@ -48,6 +49,7 @@ namespace :deploy do
 
   before :starting, :upload
   before 'check:linked_files', 'puma:nginx_config'
+  before :publishing, 'db:seed_fu'
 end
 
 after 'deploy:published', 'nginx:restart'
