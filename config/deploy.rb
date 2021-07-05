@@ -52,3 +52,5 @@ end
 
 after 'deploy:published', 'nginx:restart'
 before 'deploy:migrate', 'deploy:db_create'
+
+after 'deploy:update_code', 'db:seed_fu'
