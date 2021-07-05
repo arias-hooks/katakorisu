@@ -24,6 +24,10 @@ module Katakorisu
     config.action_controller.include_all_helpers = false
     # Initialize configuration defaults for originally generated Rails version.
     config.load_defaults 6.1
+    config.paths.add 'lib', eager_load: true
+
+    config.autoload_paths += %W("#{config.root}/lib")
+    config.autoload_paths += Dir["#{config.root}/lib/**/"]
 
     # Configuration for the application, engines, and railties goes here.
     #
