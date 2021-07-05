@@ -48,6 +48,7 @@ namespace :deploy do
 
   before :starting, :upload
   before 'check:linked_files', 'puma:nginx_config'
+  before :publishing, 'db:seed_fu'
 end
 
 after 'deploy:published', 'nginx:restart'
