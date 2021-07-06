@@ -6,6 +6,6 @@ set :environment, rails_env
 set :output, environment == 'development' ? 'log/crontab.log' : '/var/www/katakorisu/shared/log/crontab.log'
 job_type :rake, 'export PATH="$HOME/.rbenv/bin:$PATH"; eval "$(rbenv init -)"; cd :path && RAILS_ENV=:environment bundle exec rake :task :output'
 
-every '35 9-21 * * *' do
+every 1.minute do
   rake 'squirrel_increase:update_squirrel_number'
 end
