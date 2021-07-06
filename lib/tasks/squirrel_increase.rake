@@ -3,6 +3,7 @@ namespace :squirrel_increase do
   task update_squirrel_number: :environment do
     Squirrel.where('number <= ?', 5).find_each do |squirrel|
       squirrel.update!(number: squirrel.number + 1)
+      p "実行しました。#{Time.now}"
       user = User.find(squirrel.user_id)
       if user.setting.one?
         message = {
@@ -21,7 +22,6 @@ namespace :squirrel_increase do
           config.channel_token = ENV['LINE_CHANNEL_TOKEN']
         end
         response = client.push_message(user.line_user_id, message)
-        p response
       elsif user.setting.six? && squirrel.number == 6
         message = {
           type: 'text',
@@ -39,7 +39,6 @@ namespace :squirrel_increase do
           config.channel_token = ENV['LINE_CHANNEL_TOKEN']
         end
         response = client.push_message(user.line_user_id, message)
-        p response
       end
     end
   end
