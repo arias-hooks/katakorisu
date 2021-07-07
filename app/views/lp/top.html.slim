@@ -4,40 +4,24 @@ header.flex.items-center.justify-between.p-3.bg-yellow-500
     span.font-semibold.text-xl
       = t('defaults.app_name')
 
-
 .container.mx-auto.flex.px-4.py-8.md:flex-row.flex-col.items-center.text-gray-600
-  .lg:flex-grow.lg:pr-24.md:pr-16.flex.flex-col.md:items-start.md:text-left.mb-16.md:mb-0.items-center.text-center class="md:w-1/2"
-    h1.title-font.sm:text-4xl.text-3xl.mb-4.font-bold.text-gray-900
+  .lg:flex-grow.flex.flex-col.mb-4.md:mb-0.items-center.text-center
+    h1.title-font.sm:text-4xl.text-3xl.mb-4.font-bold.text-gray-900.text-center
       | 肩こり解消サポートサービス「肩こリス」
-    p.leading-relaxed
+    p.leading-relaxed.text-center.text-xl
       | あなたの肩こり、実は「肩こリス」のせいです！！
+    .flex.justify-center.items-center.py-2.mx-auto.m-4
+        <a href="https://lin.ee/utNdmb1"><img src="https://scdn.line-apps.com/n/line_add_friends/btn/ja.png" alt="友だち追加" height="36" border="0"></a>
   .lg:max-w-lg.lg:w-full class=("md:w-1/2 w-5/6")
     = image_tag "squirrel/6.gif", class: 'object-cover object-center rounded'
 
-
-
-
-/ .squirrel.mt-4.flex.justify-between.items-center.mx-auto.max-w-screen-sm
-/   = image_tag "squirrel/6.gif"
-
-
-.flex.justify-center.items-center.py-2.mx-auto
-  img src="https://qr-official.line.me/sid/M/514sqedb.png"
-.flex.justify-center.items-center.py-2.mx-auto
-    <a href="https://lin.ee/utNdmb1"><img src="https://scdn.line-apps.com/n/line_add_friends/btn/ja.png" alt="友だち追加" height="36" border="0"></a>
-
-
-
-/ .flex.justify-center.items-center.py-4
-/   ul.sns-wrap
-/     li.twitter
-/       a.twitter-share-button data-lang="ja" data-show-count="false" data-size="large" data-text=("#{t('defaults.app_detail')}") data-url="#{request.base_url}" data-hashtags="#{t('defaults.app_name')}" href="https://twitter.com/share?ref_src=twsrc%5Etfw"
-/       script async="" charset="utf-8" src="https://platform.twitter.com/widgets.js"
-
-/     li.line
-/       .line-it-button data-color="default" data-count="false" data-lang="ja" data-size="large" data-type="share-a" data-url="#{request.base_url}" data-ver="3" style=("display: none;")
-/       script async="async" defer="defer" src="https://www.line-website.com/social-plugins/js/thirdparty/loader.min.js"
-
+section.text-gray-600.body-font.bgc
+  .container.px-5.py-24.mx-auto
+    .flex.flex-col.text-center.w-full.mb-20
+      h2.sm:text-3xl.text-2xl.font-medium.title-font.mb-4.text-gray-900
+        | 肩こリスとは？
+      p.mx-auto.leading-relaxed.text-base class="lg:w-2/3"
+        | 肩こリスというリスのような動物が、肩をかじっているせい。
 
 footer.bg-yellow-500.text-center.text-white
   = link_to '/terms', class: 'm-8 hover:text-white hover:opacity-80' do
