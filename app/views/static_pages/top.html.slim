@@ -1,9 +1,3 @@
-header.flex.items-center.justify-between.p-3.bg-yellow-500
-  .flex.items-center.flex-no-shrink.text-white.mr-6
-    = image_tag 'squirrel/icon.png', class: 'w-7 h-7 mr-2'
-    span.font-semibold.text-xl
-      = t('defaults.app_name')
-
 .container.mx-auto.flex.px-4.py-8.md:flex-row.flex-col.items-center.text-gray-600
   .lg:flex-grow.flex.flex-col.mb-4.md:mb-0.items-center.text-center
     h1.title-font.sm:text-4xl.text-3xl.mb-4.font-bold.text-gray-900.text-center
@@ -22,12 +16,3 @@ section.text-gray-600.body-font.bgc
         | 肩こリスとは？
       p.mx-auto.leading-relaxed.text-base class="lg:w-2/3"
         | 肩こリスというリスのような動物が、肩をかじっているせい。
-
-footer.bg-yellow-500.text-center.text-white
-  = link_to '/terms', class: 'm-8 hover:text-white hover:opacity-80' do
-    | 利用規約
-  br
-  = link_to '/privacy', class: 'm-8 hover:text-white hover:opacity-80' do
-    | プライバシーポリシー
-  div.text-lg
-    = '© 2021 肩こリス'

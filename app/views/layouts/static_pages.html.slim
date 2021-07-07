@@ -14,4 +14,6 @@ html
     - if Rails.env.production?
       = render 'layouts/google_analytics'
   body.font
+    = render 'static_pages/header'
     = yield
+    = render 'static_pages/footer'

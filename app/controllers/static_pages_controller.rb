@@ -1,4 +1,4 @@
-class LpController < ApplicationController
+class StaticPagesController < ApplicationController
   skip_before_action :login_required
 
   def terms; end
