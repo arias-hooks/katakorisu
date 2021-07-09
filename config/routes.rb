@@ -9,5 +9,4 @@ Rails.application.routes.draw do
   get 'terms' => 'static_pages#terms'
   get 'privacy' => 'static_pages#privacy'
   get 'top' => 'static_pages#top'
-  get 'description' => 'static_pages#description'
 end

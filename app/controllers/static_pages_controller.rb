@@ -6,6 +6,4 @@ class StaticPagesController < ApplicationController
   def privacy; end
 
   def top; end
-
-  def description; end
 end
