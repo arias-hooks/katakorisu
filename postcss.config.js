@@ -1,4 +1,4 @@
-const environment = {
+module.exports = {
   plugins: [
     require('tailwindcss')("./app/javascript/css/tailwind.config.js"),
     require('postcss-import'),
@@ -11,19 +11,3 @@ const environment = {
     })
   ]
 }
-
-if (process.env.RAILS_ENV === "production") {
-  environment.plugins.push(
-    require('@fullhuman/postcss-purgecss')({
-      content: [
-        './app/**/*.html.erb',
-        './app/**/*.html.slim',
-        './app/**/*.js.erb',
-        './app/helpers/**/*.rb',
-      ],
-      whitelist: ['img', 'video', ':root'],
-    })
-  )
-}
-
-module.exports = environment
