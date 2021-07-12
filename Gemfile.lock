@@ -348,8 +348,6 @@ GEM
       net-ssh (>= 2.8.0)
     sshkit-interactive (0.3.0)
       sshkit (~> 1.12)
-    tailwindcss-rails (0.3.3)
-      rails (>= 6.0.0)
     temple (0.8.2)
     thor (1.1.0)
     tilt (2.0.10)
@@ -429,7 +427,6 @@ DEPENDENCIES
   slack-notifier
   slim-rails
   spring
-  tailwindcss-rails
   tzinfo-data
   web-console (>= 4.1.0)
   webdrivers
