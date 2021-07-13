@@ -3,14 +3,13 @@ html
   head
     title= page_title(yield(:title))
     meta[name="viewport" content="width=device-width,initial-scale=1"]
-    script[charset="utf-8" src="https://static.line-scdn.net/liff/edge/2/sdk.js"]
     = csrf_meta_tags
     = csp_meta_tag
     = favicon_link_tag('favicon.ico')
     = stylesheet_link_tag 'application', media: 'all'
     = javascript_pack_tag 'application'
+    = display_meta_tags(default_meta_tags)
     link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet"
-    link href="https://fonts.googleapis.com/css?family=M+PLUS+Rounded+1c" rel="stylesheet"
     - if Rails.env.production?
       = render 'layouts/google_analytics'
   body.font
