@@ -6,7 +6,7 @@ h1.text-3xl.font-bold.mt-3.ml-2
 
 - if flash.notice.present?
   = render 'shared/flash_message'
-- elsif flash.notice.blank? && current_user.acorn.number.zero?
+- elsif flash.notice.blank?
   p.text-gray-900.mt-3.text-center.font-bold
     = t('.detail')
 
