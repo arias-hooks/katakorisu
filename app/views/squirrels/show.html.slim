@@ -7,10 +7,13 @@ h1.text-3xl.font-bold.mt-3.ml-2
 - if flash.notice.present?
   = render 'shared/flash_message'
 - elsif flash.notice.blank?
-  p.text-gray-900.mt-3.text-center.font-bold
-    = t('.detail')
+  = render 'squirrels/description'
+  .flex.items-center.mx-auto
+    .p-2.w-full.text-center
+      button#description-button.bg-yellow-500.text-white.px-6.py-2.rounded-xl.font-medium.mx-3.justify-center
+        = t('.description')
 
-.squirrel.mt-4.flex.justify-between.items-center.mx-auto.max-w-screen-sm
+.squirrel.mt-3.flex.justify-between.items-center.mx-auto.max-w-screen-sm
   - if params[:friend_num]
     = image_tag "eat_squirrel/#{params[:friend_num]}.gif", class: "eat_squirrel/#{params[:friend_num]}.gif"
   - else
