@@ -3,19 +3,48 @@ section.container.mx-auto.flex.px-4.py-8.md:flex-row.flex-col.items-center.text-
     h1.title-font.sm:text-4xl.text-3xl.mb-4.font-bold.text-gray-900.text-center
       | 肩こり解消サポートアプリ「肩こリス」
     p.leading-relaxed.text-center.text-xl
-      | あなたの肩こり、実は「肩こリス」のせいです！！
+      | 肩こリスと友達になって、肩こり解消しよう！
     .flex.justify-center.items-center.py-2.mx-auto.m-4
         <a href="https://lin.ee/utNdmb1"><img src="https://scdn.line-apps.com/n/line_add_friends/btn/ja.png" alt="友だち追加" height="36" border="0"></a>
   .lg:max-w-lg.lg:w-full class=("md:w-1/2 w-5/6")
     = image_tag "squirrel/6.gif", class: 'object-cover object-center rounded'
 
-section.text-gray-600.body-font.bgc
-  .container.px-5.py-24.mx-auto
+section.text-gray-600.body-font style="background-color: ＃F2F2F2;"
+  .container.px-5.py-24.mx-auto.flex.flex-wrap
     .flex.flex-col.text-center.w-full
       h2.sm:text-3xl.text-2xl.font-semibold.title-font.mb-4.text-gray-900
-        | 肩こりの原因、「肩こリス」とは？
-      p.mx-auto.leading-relaxed.text-base class="lg:w-2/3"
-        | 肩こリスは、お腹が減ると、人の肩をかじるリスのような動物です。肩こリスを止める方法は「エクササイズ」をして、どんぐりをゲットすることです。どんぐりを「肩こリス」あげると、肩をかじるのをやめて友だちになってくれます！
+        | 肩こリスの特徴
+      .h-1.bg-gray-200.rounded.overflow-hidden.mb-5
+    .flex.relative.pt-10.pb-20.sm:items-center.mx-auto class="md:w-2/3"
+      .h-full.w-6.absolute.inset-0.flex.items-center.justify-center
+        .h-full.w-1.bg-gray-200.pointer-events-none
+      .flex-shrink-0.w-6.h-6.rounded-full.mt-10.sm:mt-0.inline-flex.items-center.justify-center.bg-yellow-500.text-white.relative.z-10.title-font.font-medium.text-sm 1
+      .flex-grow.md:pl-8.pl-6.flex.sm:items-center.items-start.flex-col.sm:flex-row
+        .flex-shrink-0.w-24.h-24.bg-yellow-100.text-yellow-500.rounded-full.inline-flex.items-center.justify-center
+          = image_tag 'squirrel/gnaw.gif', class: 'w-16 h-16'
+        .flex-grow.sm:pl-6.mt-6.sm:mt-0
+          h2.font-medium.title-font.text-gray-900.mb-1.text-xl 肩こりの生みの親
+          p.leading-relaxed 肩こリスは、お腹が減ると、人の肩をかじるリスのような動物です。肩こリスのせいで肩こりになってしまいます。
+    .flex.relative.pb-20.sm:items-center.mx-auto class="md:w-2/3"
+      .h-full.w-6.absolute.inset-0.flex.items-center.justify-center
+        .h-full.w-1.bg-gray-200.pointer-events-none
+      .flex-shrink-0.w-6.h-6.rounded-full.mt-10.sm:mt-0.inline-flex.items-center.justify-center.bg-yellow-500.text-white.relative.z-10.title-font.font-medium.text-sm 2
+      .flex-grow.md:pl-8.pl-6.flex.sm:items-center.items-start.flex-col.sm:flex-row
+        .flex-shrink-0.w-24.h-24.bg-yellow-100.text-yellow-500.rounded-full.inline-flex.items-center.justify-center
+          i.fas.fa-chart-line.fa-3x
+        .flex-grow.sm:pl-6.mt-6.sm:mt-0
+          h2.font-medium.title-font.text-gray-900.mb-1.text-xl 時間が経つとふえる
+          p.leading-relaxed 時間が経過すると、肩こリスはどんどん肩に乗ってきます。(1時間に1匹、最大6匹までふえる)。
+    .flex.relative.pb-20.sm:items-center.mx-auto class="md:w-2/3"
+      .h-full.w-6.absolute.inset-0.flex.items-center.justify-center
+        .h-full.w-1.bg-gray-200.pointer-events-none
+      .flex-shrink-0.w-6.h-6.rounded-full.mt-10.sm:mt-0.inline-flex.items-center.justify-center.bg-yellow-500.text-white.relative.z-10.title-font.font-medium.text-sm 3
+      .flex-grow.md:pl-8.pl-6.flex.sm:items-center.items-start.flex-col.sm:flex-row
+        .flex-shrink-0.w-24.h-24.bg-yellow-100.text-yellow-500.rounded-full.inline-flex.items-center.justify-center
+          = image_tag 'acron/acron.png'
+        .flex-grow.sm:pl-6.mt-6.sm:mt-0
+          h2.font-medium.title-font.text-gray-900.mb-1.text-xl どんぐりが大好き
+          p.leading-relaxed 肩こリスの大好物はどんぐりです。肩に乗っているリスを止めるには、どんぐりをあげて、友達になることです。どんぐりは、エクササイズ動画を見るとゲットできます。
 
 section.text-gray-600.body-font
   .container.px-5.py-24.mx-auto
