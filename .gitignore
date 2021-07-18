@@ -40,3 +40,4 @@ yarn-debug.log*
 localhost-key.pem
 localhost.pem
 .env.production
+.env.development
