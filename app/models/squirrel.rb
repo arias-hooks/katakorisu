@@ -6,17 +6,29 @@ class Squirrel < ApplicationRecord
   validates :user_id, presence: true, uniqueness: true
 
   def random_friends
-    if number <= 3
+    case number
+    when 1
+      probability = 1
+    when 2
+      probability = 0.95
+    when 3
+      probability = 0.85
+    when 4
+      probability = 0.7
+    when 5
+      probability = 0.3
+    when 6
+      probability = 0.15
+    end
+
+    if probability >= rand
       number
+    elsif probability + 0.2 >= rand
+      number - 1
+    elsif probability + 0.4 >= rand
+      number - 2
     else
-      case rand(1..10)
-      when 1..3
-        number - 2
-      when 3..6
-        number - 1
-      else
-        number
-      end
+      number - 3
     end
   end
 end
