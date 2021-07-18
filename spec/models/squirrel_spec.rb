@@ -8,48 +8,58 @@ RSpec.describe Squirrel, type: :model do
 
     context 'numberが1の場合' do
       it '1を返すこと' do
-        squirrel.number = 1
-        expect(squirrel.random_friends).to eq 1
+        1000.times do
+          squirrel.number = 1
+          expect(squirrel.random_friends).to eq 1
+        end
       end
     end
 
-    context 'numberが1の場合' do
-      it '2を返すこと' do
-        squirrel.number = 2
-        expect(squirrel.random_friends).to eq 2
+    context 'numberが2の場合' do
+      it 'ランダムで1~2の整数を返すこと' do
+        1000.times do
+          squirrel.number = 2
+          expect([squirrel.random_friends]).to include 1..2
+        end
       end
     end
 
     context 'numberが3の場合' do
-      it '3を返すこと' do
-        squirrel.number = 3
-        expect(squirrel.random_friends).to eq 3
+      it 'ランダムで2~3の整数を返すこと' do
+        1000.times do
+          squirrel.number = 3
+          expect([squirrel.random_friends]).to include 2..3
+        end
       end
     end
 
     context 'numberが4の場合' do
       it 'ランダムで2~4の整数を返すこと' do
-        squirrel.number = 4
-        expect([squirrel.random_friends]).to include 2..4
+        1000.times do
+          squirrel.number = 4
+          expect([squirrel.random_friends]).to include 2..4
+        end
       end
     end
 
     context 'numberが5の場合' do
-      it 'ランダムで3~5の整数を返すこと' do
-        squirrel.number = 5
-        expect([squirrel.random_friends]).to include 3..5
+      it 'ランダムで2~5の整数を返すこと' do
+        1000.times do
+          squirrel.number = 5
+          expect([squirrel.random_friends]).to include 2..5
+        end
       end
     end
 
     context 'numberが6の場合' do
-      it 'ランダムで4~6の整数を返すこと' do
-        squirrel.number = 6
-        expect([squirrel.random_friends]).to include 4..6
+      it 'ランダムで3~6の整数を返すこと' do
+        1000.times do
+          squirrel.number = 6
+          expect([squirrel.random_friends]).to include 3..6
+        end
       end
     end
   end
-
-
 
   describe 'Squirrelのバリデーション' do
     let(:squirrel) { build(:squirrel, user: user) }
