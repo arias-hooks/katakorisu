@@ -34,7 +34,7 @@ module ApplicationHelper
       separator: '|',
       icon: [
         { href: image_url('favicon.ico') },
-        { href: image_url('squirrel/6.gif'), rel: 'apple-touch-icon', sizes: '180x180', type: 'image/jpg' },
+        { href: image_url('squirrel/6.gif'), rel: 'apple-touch-icon', sizes: '180x180', type: 'image/jpg' }
       ],
       og: {
         site_name: :site,
@@ -43,11 +43,11 @@ module ApplicationHelper
         type: 'website',
         url: :canonical,
         image: image_url('squirrel/6.gif'),
-        locale: 'ja_JP',
+        locale: 'ja_JP'
       },
       twitter: {
         card: 'summary_large_image',
-        site: '@katakorisu1',
+        site: '@katakorisu1'
       }
     }
   end
