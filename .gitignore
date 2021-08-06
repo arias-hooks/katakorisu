@@ -41,3 +41,4 @@ localhost-key.pem
 localhost.pem
 .env.production
 .env.development
+/coverage

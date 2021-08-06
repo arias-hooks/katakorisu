@@ -55,8 +55,9 @@ end
 group :test do
   gem 'capybara'
   gem 'webdrivers'
-
   gem 'shoulda-matchers'
+  # カバレッジの計測
+  gem 'simplecov', require: false
 end
 
 group :development do
