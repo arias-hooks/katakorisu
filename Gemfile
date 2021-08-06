@@ -4,22 +4,34 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 ruby '2.7.4'
 gem 'mini_racer', platforms: :ruby
 
-gem 'bootstrap'
-gem 'dotenv-rails'
-gem 'draper'
-gem 'enum_help'
-gem 'exception_notification'
-gem 'font-awesome-sass'
-gem 'gon'
+# slim
 gem 'html2slim'
-gem 'kaminari'
-gem 'line-bot-api'
-gem 'meta-tags'
-gem 'rails-i18n'
-gem 'seed-fu'
-gem 'slack-notifier'
 gem 'slim-rails'
+# CSS
+gem 'bootstrap'
+# Font Awesome
+gem 'font-awesome-sass'
+# 環境変数の管理
+gem 'dotenv-rails'
+# 国際化
+gem 'rails-i18n'
+# enumの国際化
+gem 'enum_help'
+# RailsとJSを連携。JSへの環境変数の直書きを防ぐために利用。
+gem 'gon'
+# ページネーション
+gem 'kaminari'
+# 初期データを入れる。同じデータが登録されるのを防ぐために利用。
+gem 'seed-fu'
+# LINEプッシュ通知
+gem 'line-bot-api'
+# 定時バッチ処理
 gem 'whenever', require: false
+# メタタグ
+gem 'meta-tags'
+# エラー通知
+gem 'exception_notification'
+gem 'slack-notifier'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails', branch: 'main'
 gem 'rails', '~> 6.1.2', '>= 6.1.2.1'
@@ -45,9 +57,13 @@ gem 'jbuilder', '~> 2.7'
 gem 'bootsnap', '>= 1.4.4', require: false
 
 group :development, :test do
-  # Call 'byebug' anywhere in the code to stop execution and get a debugger console
+  # Debugger
+  gem 'better_errors'
+  gem 'binding_of_caller'
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
+  gem 'pry-rails'
 
+  # Test
   gem "factory_bot_rails"
   gem "rspec-rails"
 end
@@ -55,6 +71,7 @@ end
 group :test do
   gem 'capybara'
   gem 'webdrivers'
+  # マッチャのコレクション。enumのテストコードを書くために利用。
   gem 'shoulda-matchers'
   # カバレッジの計測
   gem 'simplecov', require: false
@@ -70,14 +87,12 @@ group :development do
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
   gem 'spring'
 
+  # コード解析
   gem 'rubocop', require: false
   gem 'rubocop-rails', require: false
-  gem 'rubocop-rspec'
+  gem 'rubocop-rspec', require: false
 
-  gem 'better_errors'
-  gem 'binding_of_caller'
-  gem 'pry-rails'
-
+  # 自動デプロイ
   gem 'capistrano'
   gem 'ed25519'
   gem 'bcrypt_pbkdf'
