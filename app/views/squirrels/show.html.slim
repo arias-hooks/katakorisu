@@ -27,7 +27,7 @@ h1.text-3xl.font-bold.mt-3.ml-2
         = animal_count(current_user.squirrel.number)
   .acron-count
     .flex.justify-end.px-3.mt-2
-      - if current_user.decorate.acorn_active?
+      - if current_user.can_give_acorn?
         = image_tag 'acron/acron.png', class: 'exist-acorn rounded-full border-2 border-gray-400 w-28 h-28 bg-white cursor-pointer', id: 'acorn', alt: 'acorn'
       - else
         = image_tag 'acron/acron.png', class: 'not-exist-acorn rounded-full border-2 border-gray-400 w-28 h-28 opacity-40 bg-white', id: 'acorn', alt: 'acorn'
@@ -35,7 +35,7 @@ h1.text-3xl.font-bold.mt-3.ml-2
       .text-2xl.text-gray-700.font-medium
         = "× #{current_user.acorn.number}"
 
-- if current_user.decorate.acorn_active?
+- if current_user.can_give_acorn?
   p.text-xs.text-gray-500.mt-3.text-center
     = t('.notes')
 
