@@ -175,6 +175,8 @@ GEM
       kaminari-core (= 1.2.1)
     kaminari-core (1.2.1)
     libv8-node (15.14.0.1)
+    libv8-node (15.14.0.1-x86_64-darwin-20)
+    libv8-node (15.14.0.1-x86_64-linux)
     line-bot-api (1.20.0)
     listen (3.6.0)
       rb-fsevent (~> 0.10, >= 0.10.3)
