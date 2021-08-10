@@ -4,7 +4,6 @@ class ApplicationController < ActionController::Base
 
   rescue_from StandardError, with: :render500
   rescue_from ActiveRecord::RecordNotFound, with: :render404
-  rescue_from ActionController::RoutingError, with: :render404
 
   private
 
@@ -14,6 +13,10 @@ class ApplicationController < ActionController::Base
 
   def login_required
     redirect_to top_path unless current_user
+  end
+
+  def set_liff_id
+    gon.liff_id = ENV['LIFF_ID']
   end
 
   def render404

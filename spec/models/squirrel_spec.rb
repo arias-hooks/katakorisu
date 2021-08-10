@@ -3,14 +3,14 @@ require 'rails_helper'
 RSpec.describe Squirrel, type: :model do
   let(:user) { create(:user) }
 
-  describe '#random_friends' do
+  describe '#random_friend_number' do
     let(:squirrel) { build(:squirrel, user: user) }
 
     context 'numberが1の場合' do
       it '1を返すこと' do
         1000.times do
           squirrel.number = 1
-          expect(squirrel.random_friends).to eq 1
+          expect(squirrel.random_friend_number).to eq 1
         end
       end
     end
@@ -19,7 +19,7 @@ RSpec.describe Squirrel, type: :model do
       it 'ランダムで1~2の整数を返すこと' do
         1000.times do
           squirrel.number = 2
-          expect([squirrel.random_friends]).to include 1..2
+          expect([squirrel.random_friend_number]).to include 1..2
         end
       end
     end
@@ -28,7 +28,7 @@ RSpec.describe Squirrel, type: :model do
       it 'ランダムで2~3の整数を返すこと' do
         1000.times do
           squirrel.number = 3
-          expect([squirrel.random_friends]).to include 2..3
+          expect([squirrel.random_friend_number]).to include 2..3
         end
       end
     end
@@ -37,7 +37,7 @@ RSpec.describe Squirrel, type: :model do
       it 'ランダムで2~4の整数を返すこと' do
         1000.times do
           squirrel.number = 4
-          expect([squirrel.random_friends]).to include 2..4
+          expect([squirrel.random_friend_number]).to include 2..4
         end
       end
     end
@@ -46,7 +46,7 @@ RSpec.describe Squirrel, type: :model do
       it 'ランダムで2~5の整数を返すこと' do
         1000.times do
           squirrel.number = 5
-          expect([squirrel.random_friends]).to include 2..5
+          expect([squirrel.random_friend_number]).to include 2..5
         end
       end
     end
@@ -55,7 +55,7 @@ RSpec.describe Squirrel, type: :model do
       it 'ランダムで3~6の整数を返すこと' do
         1000.times do
           squirrel.number = 6
-          expect([squirrel.random_friends]).to include 3..6
+          expect([squirrel.random_friend_number]).to include 3..6
         end
       end
     end
@@ -98,8 +98,7 @@ RSpec.describe Squirrel, type: :model do
     let!(:squirrel) { create(:squirrel, user: user) }
 
     it 'userが削除されたらsquirrelも削除される' do
-      user.destroy
-      expect(Squirrel.count).to eq 0
+      expect{ user.destroy! }.to change { Squirrel.count }.from(1).to(0)
     end
   end
 end

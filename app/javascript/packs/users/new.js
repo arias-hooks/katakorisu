@@ -5,8 +5,8 @@ document.addEventListener('DOMContentLoaded', () => {
   })
     .then(() => {
       if (!liff.isLoggedIn()) {
-        window.location = '/top'
-        // liff.login()
+        // 開発時、外部ブラウザからアクセスために利用
+        liff.login()
       }
     })
     .then(() => {
@@ -20,8 +20,10 @@ document.addEventListener('DOMContentLoaded', () => {
         method: 'POST',
         body: body
       });
+      // lineのユーザーIDトークンをcontrollerに送る
       fetch(request)
         .then(() => {
+          // controllerからレスポンスがきたら、ホーム画面にページ遷移
           window.location = '/squirrel'
         })
     })

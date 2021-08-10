@@ -20,11 +20,10 @@ RSpec.describe Acorn, type: :model do
   end
 
   describe 'userとの関係性を確認する' do
-    let!(:acorn) { build(:acorn, user: user) }
+    let!(:acorn) { create(:acorn, user: user) }
 
     it 'userが削除されたらacornも削除される' do
-      user.destroy
-      expect(Acorn.count).to eq 0
+      expect{ user.destroy! }.to change { Acorn.count }.from(1).to(0)
     end
   end
 end
