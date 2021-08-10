@@ -32,11 +32,10 @@ RSpec.describe Activity, type: :model do
   end
 
   describe 'userとの関係性を確認する' do
-    let!(:activity) { build(:activity, user: user) }
+    let!(:activity) { create(:activity, user: user) }
 
     it 'userが削除されたらactivityも削除される' do
-      user.destroy
-      expect(Activity.count).to eq 0
+      expect{ user.destroy! }.to change { Activity.count }.from(1).to(0)
     end
   end
 end
