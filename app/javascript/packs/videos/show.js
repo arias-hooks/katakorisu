@@ -6,28 +6,44 @@ document.addEventListener('DOMContentLoaded', () => {
   const token = document.querySelector('meta[name="csrf-token"]').getAttribute('content');
   const url = `https://www.googleapis.com/youtube/v3/videos?id=${youtube_id}&key=${gon.youtube_api_key}&part=snippet, contentDetails&fields=items(snippet(title), contentDetails(duration))`
   let videoSeconds;
+
+  function convertIso8601(iso8601) {
+    // moment.jsを利用してISO8601 durationをmm:ssに変換
+    let moment = require('moment');
+    let momentDuration = moment.duration(iso8601, moment.ISO_8601);
+    let m = momentDuration.minutes();
+    let s = ('00' + momentDuration.seconds()).slice(-2);
+    return m + ':' + s
+  }
+
+  function iso8601ToSeconds(iso8601) {
+    // moment.jsを利用してISO8601 durationを秒数に変換
+    let moment = require('moment');
+    let momentDuration = moment.duration(iso8601, moment.ISO_8601);
+    return momentDuration.asSeconds();
+  }
+
+  // 動画のタイトルと再生時間を取得して表示する
   fetch(url)
     .then(response => response.json())
     .then(data => {
-      const rawDuration = data['items'][0]['contentDetails']['duration']
-      const h = /^PT([0-9]+)H/.exec(rawDuration) ? `${/^PT([0-9]+)H/.exec(duration)[1]}:` : ''
-      const m = /([0-9]+)M/.exec(rawDuration) ? `${/([0-9]+)M/.exec(rawDuration)[1]}:` : '00:'
-      const s = /([0-9]+)S$/.exec(rawDuration) ? /([0-9]+)S$/.exec(rawDuration)[1].padStart(2, '0') : '00'
-      const title = data['items'][0]['snippet']['title']
-      const duration = `${h}${m}${s}`
-      const a = duration.split(':');
-      if (a.length === 3) {
-        videoSeconds = (a[0] * 60 * 60 | 0) + (a[1] * 60 | 0) + (a[2] | 0);
-      } else {
-        videoSeconds = (a[0] * 60 | 0) + (a[1] | 0)
-      }
-      titleElement.innerText = title
-      durationElement.innerText = duration
+      const iso8601Duration = data['items'][0]['contentDetails']['duration'];
+      const youtubeTitle = data['items'][0]['snippet']['title'];
+      const duration = convertIso8601(iso8601Duration);
+      // 動画の秒数を後でcontrollerに送るので保存
+      videoSeconds = iso8601ToSeconds(iso8601Duration);
+      // Youtube動画のタイトルを表示
+      titleElement.innerText = youtubeTitle;
+      // Youtube動画の再生時間を表示
+      durationElement.innerText = duration;
     })
 
+  // scriptタグを生成
   const tag = document.createElement('script');
+  // IFrame Player API JavaScriptを読み込める様に編集
   tag.src = "https://www.youtube.com/iframe_api";
   const firstScriptTag = document.getElementsByTagName('script')[0];
+  // html上に設置
   firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
 
   const startButton = document.getElementById('start-button');
@@ -36,6 +52,7 @@ document.addEventListener('DOMContentLoaded', () => {
   const closeButton = document.getElementById('close-button');
   const modal = document.getElementById('modal');
 
+  // IFrame Player API JavaScriptコードの読み込みが終わったら、埋め込み用の動画を自動生成
   let player;
   window.onYouTubeIframeAPIReady = function () {
     player = new YT.Player('player', {
@@ -49,12 +66,14 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
+  // 「再生する」をタップすると動画が再生される
   function onPlayerReady(event) {
     startButton.addEventListener('click', () => {
       event.target.playVideo();
     });
   }
 
+  // 完了ボタンを押せるようにする
   function FinishButtonActive() {
     FinishButton.disabled = false;
     FinishButton.classList.remove('bg-white');
@@ -63,21 +82,25 @@ document.addEventListener('DOMContentLoaded', () => {
 
   let start = false;
   let finish = false;
+  // 動画プレーヤーの状態が変化したときに、呼び出される
   function onPlayerStateChange(event) {
+    // 動画が再生された2分後に完了ボタンを押せるようにする
     if (event.data == YT.PlayerState.PLAYING && !start) {
       setTimeout(FinishButtonActive, 120000);
-      done = true;
+      start = true;
     }
+    // 動画が終了したらvideoFinish関数が動く
     if (event.data === YT.PlayerState.ENDED && !finish) {
       videoFinish();
     }
   }
 
-
+  // 「完了する」をタップするとvideoFinish関数が動く
   FinishButton.addEventListener('click', () => {
     videoFinish();
   })
 
+  // ajax処理で、どんぐりの個数や活動記録を更新する
   function videoFinish() {
     const body = `duration=${videoSeconds}`;
     const request = new Request('/activity', {
