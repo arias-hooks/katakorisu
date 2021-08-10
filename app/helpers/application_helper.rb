@@ -47,7 +47,8 @@ module ApplicationHelper
       },
       twitter: {
         card: 'summary_large_image',
-        site: '@katakorisu1'
+        site: '@katakorisu1',
+        image: image_url('squirrel/6.gif')
       }
     }
   end
