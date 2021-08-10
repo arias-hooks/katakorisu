@@ -53,8 +53,10 @@ https://katakorisu.com/
 # マーケット
 10~30代の肩こりを解消したい人
 
+
 # 画面遷移図
 https://xd.adobe.com/view/b025fbf5-b334-466b-8dd3-9216b1e805b0-e576/
+
 
 # 使用技術
 - Ruby 2.7.4
@@ -66,6 +68,7 @@ https://xd.adobe.com/view/b025fbf5-b334-466b-8dd3-9216b1e805b0-e576/
 - YouTube IFrame Player API
 - RSpec
 
+
 ## 主要なGem
 - line-bot-api (LINE通知)
 - whenever (定期実行)
@@ -73,8 +76,10 @@ https://xd.adobe.com/view/b025fbf5-b334-466b-8dd3-9216b1e805b0-e576/
 - exception_notification (エラー通知)
 - rubocop (コード解析)
 
+
 # ER図
 ![ER図](https://user-images.githubusercontent.com/77534629/128905781-a12046f1-f869-4a94-936a-6a8c8bf80272.png)
+
 
 # インフラ構成図
 ![インフラ構成図](https://user-images.githubusercontent.com/77534629/128905820-9984c7ec-1d04-464d-9a7a-19cbe6b652e6.png)
