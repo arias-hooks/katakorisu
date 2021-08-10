@@ -7,23 +7,21 @@ document.addEventListener('DOMContentLoaded', () => {
   liff.init({
     liffId: gon.liff_id
   })
-    // .then(() => {
-    //   if (!liff.isLoggedIn()) {
-    //     liff.login()
-    //   }
-    // })
     .then(() => {
       liff.getProfile()
         .then(user => {
+          // Lineのユーザー名が取得できていたら、表示する
           if (typeof user.displayName !== 'undefined') {
             name.innerText = user.displayName;
           }
+          // Lineのプロフィール画像が取得できていたら、表示する
           if (typeof user.pictureUrl !== 'undefined') {
             picture.src = user.pictureUrl;
           }
         })
     })
 
+  // 通知設定フォームが変更されたら、ajax処理で更新
   selectForm.addEventListener('change', () => {
     const body = `selected=${selectForm.value}`;
     const request = new Request('/setting', {
@@ -38,7 +36,11 @@ document.addEventListener('DOMContentLoaded', () => {
     fetch(request)
       .then(response => response.json())
       .then(data => {
-        swal(`${data.notification}に変更しました。`);
+        if (data['status'] === 200) {
+          swal(`${data.notification}に変更しました。`);
+        } else {
+          throw new Error('statusError');
+        }
       })
       .catch(() => {
         swal('通知設定の更新に失敗しました');

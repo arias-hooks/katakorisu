@@ -5,7 +5,8 @@ class Squirrel < ApplicationRecord
   validates :total_number, presence: true, numericality: { only_integer: true, greater_than_or_equal_to: 0 }
   validates :user_id, presence: true, uniqueness: true
 
-  def random_friends
+  # 現在のリスの数が多いほど、小さい数をランダムで返す。友達になるリスの数をランダムにするためのメソッド
+  def random_friend_number
     case number
     when 1
       probability = 1
