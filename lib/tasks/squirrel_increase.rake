@@ -1,8 +1,8 @@
 namespace :squirrel_increase do
   def line_bot_client
     Line::Bot::Client.new do |config|
-      config.channel_secret = ENV['LINE_CHANNEL_SECRET']
-      config.channel_token = ENV['LINE_CHANNEL_TOKEN']
+      config.channel_secret = Rails.application.credentials.dig(:line, :channel_secret)
+      config.channel_token = Rails.application.credentials.dig(:line, :channel_token)
     end
   end
 
@@ -25,7 +25,7 @@ namespace :squirrel_increase do
     Squirrel.where('number <= ?', 5).find_each do |squirrel|
       # 現在のリスを1匹増やす
       squirrel.update!(number: squirrel.number + 1)
-      p "実行しました。#{Time.now}"
+      p "実行しました。#{Time.zone.now}"
       user = User.find(squirrel.user_id)
       # 通知設定が「1匹増えるごとに通知」の場合
       if user.setting.one?

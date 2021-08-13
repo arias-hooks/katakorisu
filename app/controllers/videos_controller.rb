@@ -21,6 +21,6 @@ class VideosController < ApplicationController
   private
 
   def set_youtube_api
-    gon.youtube_api_key = ENV['YOUTUBE_API_KEY']
+    gon.youtube_api_key = Rails.application.credentials.dig(:youtube, :api_key)
   end
 end

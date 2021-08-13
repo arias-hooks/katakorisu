@@ -16,7 +16,7 @@ class ApplicationController < ActionController::Base
   end
 
   def set_liff_id
-    gon.liff_id = ENV['LIFF_ID']
+    gon.liff_id = Rails.application.credentials.dig(:liff, :liff_id)
   end
 
   def render404
