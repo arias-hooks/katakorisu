@@ -22,6 +22,7 @@ ja:
       disappear_squirrel: ページを更新すると, 友達になったリスは消えます！ 1時間ごとにリスは増えるので, またエクササイズしてね！
     update:
       message: "%{item}匹の肩こリスが友達になりました！"
+      do_not_have: "どんぐりが1つもありません！"
   activities:
     show:
       title: アクティビティ
