@@ -98,7 +98,7 @@ RSpec.describe Squirrel, type: :model do
     let!(:squirrel) { create(:squirrel, user: user) }
 
     it 'userが削除されたらsquirrelも削除される' do
-      expect{ user.destroy! }.to change { Squirrel.count }.from(1).to(0)
+      expect { user.destroy! }.to change(described_class, :count).from(1).to(0)
     end
   end
 end

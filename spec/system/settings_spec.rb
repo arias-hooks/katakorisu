@@ -9,7 +9,7 @@ RSpec.describe "Settings", type: :system, js: true do
 
   describe '通知設定' do
     before do
-      #session[:user_id]に値を入れユーザーがログインしている状態を作る
+      # session[:user_id]に値を入れユーザーがログインしている状態を作る
       allow_any_instance_of(ActionDispatch::Request).to receive(:session).and_return(user_id: user.id)
     end
 
