@@ -10,7 +10,7 @@ RSpec.describe Setting, type: :model do
 
   describe 'userとの関係性を確認する' do
     it 'userが削除されたらsettingも削除される' do
-      expect{ user.destroy }.to change { Setting.count }.from(1).to(0)
+      expect { user.destroy! }.to change(described_class, :count).from(1).to(0)
     end
   end
 end

@@ -5,7 +5,7 @@ set :application, "katakorisu"
 set :repo_url, "git@github.com:arias-hooks/katakorisu.git"
 set :user, 'asa_koshiro'
 set :deploy_to, "/var/www/katakorisu"
-set :linked_files, %w[config/master.key config/database.yml .env]
+set :linked_files, %w[config/master.key config/database.yml config/credentials/production.key]
 set :linked_dirs, %w[log tmp/pids tmp/cache tmp/sockets public/system vendor/bundle]
 set :rbenv_ruby, File.read('.ruby-version').strip
 set :puma_threds, [4, 16]
@@ -30,7 +30,7 @@ namespace :deploy do
       sudo :mkdir, '-p', '/etc/nginx/sites-enabled'
       sudo :mkdir, '-p', '/etc/nginx/sites-available'
 
-      upload!('.env.production', "/var/www/katakorisu/shared/.env")
+      upload!('config/credentials/production.key', "/var/www/katakorisu/shared/config/credentials/production.key")
       upload!('config/database.yml', "/var/www/katakorisu/shared/config/database.yml")
       upload!('config/master.key', "/var/www/katakorisu/shared/config/master.key")
     end

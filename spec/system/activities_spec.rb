@@ -10,13 +10,13 @@ RSpec.describe "Activities", type: :system do
   describe 'アクティビティ画面', js: true do
     context 'ユーザーがログインしているとき' do
       before do
-        #session[:user_id]に値を入れユーザーがログインしている状態を作る
+        # session[:user_id]に値を入れユーザーがログインしている状態を作る
         allow_any_instance_of(ActionDispatch::Request).to receive(:session).and_return(user_id: user.id)
       end
 
       it 'アクティビティ画面が正しく表示される' do
         visit activity_path
-        expect(current_path).to eq(activity_path)
+        expect(page).to have_current_path(activity_path, ignore_query: true)
         expect(page).to have_content('アクティビティ')
       end
 
@@ -38,10 +38,11 @@ RSpec.describe "Activities", type: :system do
         expect(page).to have_selector '#video_viewing_time', text: '1分'
       end
     end
+
     context 'ユーザーがログインしていないとき' do
       it 'トップ画面が表示される' do
         visit activity_path
-        expect(current_path).to eq(top_path)
+        expect(page).to have_current_path(top_path, ignore_query: true)
         expect(page).to have_content('肩こリス')
       end
     end

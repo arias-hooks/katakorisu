@@ -10,13 +10,13 @@ RSpec.describe "Videos", type: :system do
   describe 'エクササイズ一覧画面', js: true do
     context 'ユーザーがログインしているとき' do
       before do
-        #session[:user_id]に値を入れユーザーがログインしている状態を作る
+        # session[:user_id]に値を入れユーザーがログインしている状態を作る
         allow_any_instance_of(ActionDispatch::Request).to receive(:session).and_return(user_id: user.id)
       end
 
       it '一覧画面が正しく表示される' do
         visit videos_path
-        expect(current_path).to eq(videos_path)
+        expect(page).to have_current_path(videos_path, ignore_query: true)
         expect(page).to have_content('エクササイズ')
         expect(page).to have_content('動画を見てどんぐりをゲットしよう！！')
         expect(page).to have_link('ストレッチ')
@@ -57,10 +57,11 @@ RSpec.describe "Videos", type: :system do
         end
       end
     end
+
     context 'ユーザーがログインしていないとき' do
       it 'トップ画面が表示される' do
         visit videos_path
-        expect(current_path).to eq(top_path)
+        expect(page).to have_current_path(top_path, ignore_query: true)
         expect(page).to have_content('肩こリス')
       end
     end
@@ -69,7 +70,7 @@ RSpec.describe "Videos", type: :system do
   describe 'エクササイズ動画再生画面' do
     context 'ユーザーがログインしているとき' do
       before do
-        #session[:user_id]に値を入れユーザーがログインしている状態を作る
+        # session[:user_id]に値を入れユーザーがログインしている状態を作る
         allow_any_instance_of(ActionDispatch::Request).to receive(:session).and_return(user_id: user.id)
         visit videos_path
         click_link('ストレッチ')
@@ -81,10 +82,11 @@ RSpec.describe "Videos", type: :system do
         expect(page).to have_content('完了する')
       end
     end
+
     context 'ユーザーがログインしていないとき' do
       it 'トップ画面が表示される' do
         visit videos_path(1)
-        expect(current_path).to eq(top_path)
+        expect(page).to have_current_path(top_path, ignore_query: true)
         expect(page).to have_content('肩こリス')
       end
     end

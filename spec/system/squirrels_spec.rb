@@ -10,13 +10,13 @@ RSpec.describe "Squirrels", type: :system do
   describe 'ホーム画面', js: true do
     context 'ユーザーがログインしているとき' do
       before do
-        #session[:user_id]に値を入れユーザーがログインしている状態を作る
+        # session[:user_id]に値を入れユーザーがログインしている状態を作る
         allow_any_instance_of(ActionDispatch::Request).to receive(:session).and_return(user_id: user.id)
       end
 
       it 'ホーム画面が正しく表示される' do
         visit squirrel_path
-        expect(current_path).to eq(squirrel_path)
+        expect(page).to have_current_path(squirrel_path, ignore_query: true)
         expect(page).to have_content('ホーム')
       end
 
@@ -80,7 +80,7 @@ RSpec.describe "Squirrels", type: :system do
     context 'ユーザーがログインしていないとき' do
       it 'トップ画面が表示される' do
         visit squirrel_path
-        expect(current_path).to eq(top_path)
+        expect(page).to have_current_path(top_path, ignore_query: true)
         expect(page).to have_content('肩こリス')
       end
     end

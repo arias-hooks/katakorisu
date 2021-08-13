@@ -23,7 +23,7 @@ RSpec.describe Acorn, type: :model do
     let!(:acorn) { create(:acorn, user: user) }
 
     it 'userが削除されたらacornも削除される' do
-      expect{ user.destroy! }.to change { Acorn.count }.from(1).to(0)
+      expect { user.destroy! }.to change(described_class, :count).from(1).to(0)
     end
   end
 end

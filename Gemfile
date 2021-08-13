@@ -11,8 +11,6 @@ gem 'slim-rails'
 gem 'bootstrap'
 # Font Awesome
 gem 'font-awesome-sass'
-# 環境変数の管理
-gem 'dotenv-rails'
 # 国際化
 gem 'rails-i18n'
 # enumの国際化

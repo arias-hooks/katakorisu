@@ -35,7 +35,7 @@ RSpec.describe Activity, type: :model do
     let!(:activity) { create(:activity, user: user) }
 
     it 'userが削除されたらactivityも削除される' do
-      expect{ user.destroy! }.to change { Activity.count }.from(1).to(0)
+      expect { user.destroy! }.to change(described_class, :count).from(1).to(0)
     end
   end
 end

@@ -5,7 +5,7 @@ RSpec.configure do |config|
     Rails.application.load_tasks # Load all the tasks just as Rails does (`load 'Rakefile'` is another simple way)
   end
 
-  config.before(:each) do
+  config.before do
     Rake.application.tasks.each(&:reenable) # Remove persistency between examples
   end
 end

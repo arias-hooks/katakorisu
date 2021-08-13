@@ -8,8 +8,8 @@ require:
 
 AllCops:
   # Rubyバージョン指定
-  TargetRubyVersion: 2.7.2
-  TargetRailsVersion: 6.1.2
+  TargetRubyVersion: 2.7.4
+  TargetRailsVersion: 6.1.4
   # 除外
   Exclude:
     - 'config.ru'
@@ -61,7 +61,6 @@ Metrics/BlockLength:
   Exclude:
     - 'Gemfile'
     - 'config/**/*'
-    - 'spec/**/*_spec.rb'
 
 Metrics/ClassLength:
   CountComments: false
@@ -80,10 +79,6 @@ Naming/AccessorMethodName:
 
 Style/AsciiComments:
   Enabled: false
-
-Style/BlockDelimiters:
-  Exclude:
-    - 'spec/**/*_spec.rb'
 
 Style/ClassAndModuleChildren:
   Enabled: false
@@ -111,7 +106,3 @@ Style/HashTransformValues:
 
 Bundler/OrderedGems:
   Enabled: false
-
-Rails/SkipsModelValidations:
-  Whitelist:
-    - increment!
