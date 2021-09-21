@@ -82,4 +82,5 @@ https://xd.adobe.com/view/b025fbf5-b334-466b-8dd3-9216b1e805b0-e576/
 
 
 # インフラ構成図
-![インフラ構成図](https://user-images.githubusercontent.com/77534629/128905820-9984c7ec-1d04-464d-9a7a-19cbe6b652e6.png)
+![インフラ構成図](https://user-images.githubusercontent.com/77534629/134108664-5795b87b-114d-481d-8bf5-245ab55963ba.png)
+
