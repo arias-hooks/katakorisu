@@ -7,7 +7,7 @@
 # アプリURL
 LINE botを使ったサービスなので、スマホから見るのをおすすめします！
 
-https://katakorisu.com/
+https://katakorisu.com/ （現在は非公開）
 
 🌷 PV数 3600PV 
 
